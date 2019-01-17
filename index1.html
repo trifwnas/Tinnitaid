@@ -85,7 +85,7 @@
       margin-top: 0;
     }
 
-    .card_item button {
+/*     .card_item button {
       border-radius: 25px;
       color: white;
       font-weight: bold;
@@ -103,7 +103,7 @@
 
     .card_item h2 {
       padding-top: 25px;
-    }
+    } */
 
     .card_item_img {
       display: inline;
@@ -280,13 +280,14 @@
           3k
           <input type="range" min="3000" max="8000" value="3000" class="slider" id="freqRange" step="1">
           8k
-          <p>Frequency: <span id="demo"></span>Hz</p> <button class="button" onclick='setFrequency1()'>Set</button>
+          <p>Frequency: <span id="demo"></span>Hz</p>
+          <input type=button class="button" onclick='setFrequency1()' value="Set">
           <h2>Or type it</h2>
           <input class='inputfield' id='input' value='4000'> Hz<br />
-          <button class="button" onclick='setFrequency()'>Set</button>
+          <input type=button class="button" onclick='setFrequency()' value="Set">
         </div>
       </li>
-      <li class="card_item">
+      <!-- <li class="card_item">
         <h2>Select Volume</h2>
         <img class="img" src="/labs/stoptinnitus/img/speaker_low.png" alt="speaker_low" width="18" height="18">
         <input type="range" min="0" max="1" value="0" class="slider" id="volRange" step="0.1">
@@ -302,10 +303,10 @@
             output.innerHTML = this.value;
           }
         </script>
-      </li>
+      </li> -->
       <li class="card_item">
         <h2>Control the sound</h2>
-        <button class="button" onclick='playpause()'>Play/Pause</button><br>
+        <input type=button class="button" onclick='playpause()' value="Play/Pause">
         <script>
           // Temporary workaround until AudioContext is standardized 
           window.AudioContext = window.AudioContext || window.webkitAudioContext;
