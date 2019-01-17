@@ -209,9 +209,61 @@
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js">
   </script>
+
+  <!-- Google Analytics -->
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <!-- /Google Analytics -->
 </head>
 
 <body>
+  <!-- Google Analytics -->
+  <amp-analytics type="googleanalytics" id="analytics-ga">
+      <script type="application/json">
+      {
+        "vars": {
+          "account": "UA-46431000-18"
+        },
+        "triggers": {
+          "trackPageview": {
+            "on": "visible",
+            "request": "pageview"
+          },
+          "previews": {
+            "on": "click",
+            "selector": "[data-vars-preview]",
+            "request": "event",
+            "vars": {
+              "eventCategory": "preview",
+              "eventAction": "click",
+              "eventLabel": "${preview}"
+            }
+          },
+          "downloads": {
+            "on": "click",
+            "selector": "[data-vars-download]",
+            "request": "event",
+            "vars": {
+              "eventCategory": "download",
+              "eventAction": "click",
+              "eventLabel": "${download}"
+            }
+          },
+          "outboundLinks": {
+            "on": "click",
+            "selector": "[data-vars-outbound-link]",
+            "request": "event",
+            "vars": {
+              "eventCategory": "outbound",
+              "eventAction": "click",
+              "eventLabel": "${outboundLink}"
+            }
+          }
+        }
+      }
+      </script>
+    </amp-analytics>
+    <!-- /Google Analytics -->
+    
   <header class="header">
     <amp-img src="/labs/stoptinnitus/img/amp_logo_white.svg" width="36" height="36"></amp-img>
     <h1><a href="/labs/stoptinnitus/index1.html">Stop Tinnitus</a></h1>
