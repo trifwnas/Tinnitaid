@@ -2,6 +2,7 @@
   "name": "Stop Tinnitus App",
   "short_name": "Stop Tinnitus",
   "theme_color": "#1976D2",
+  "scope": "/",
   "background_color": "#00796b",
   "display": "standalone",
   "start_url": "/index.html",
