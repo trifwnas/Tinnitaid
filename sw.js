@@ -19,15 +19,15 @@ workbox.precaching.precacheAndRoute([
     "revision": "df128d26bb435e2363e54cb03a59117c"
   },
   {
-    "url": "img/favicon/img/favicon/android-chrome-128x128.png",
+    "url": "img/favicon/apple-touch-icon-120x120.png",
     "revision": "931389ae9534e0116433ba245d7ccbd2"
   },
   {
-    "url": "img/favicon/img/favicon/android-chrome-144x144.png",
+    "url": "img/favicon/android-chrome-144x144.png",
     "revision": "fcbfa0e31cbe00db1e7e333b0b4085a9"
   },
   {
-    "url": "img/favicon/android-chrome-152x152.png",
+    "url": "img/favicon/apple-touch-icon-152x152.png",
     "revision": "15c7666e3262c9a01198cc97e3dfeee2"
   },
   {
