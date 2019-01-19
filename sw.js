@@ -11,7 +11,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "img/amp_logo_white.svg",
+    "url": "img/stoptinnitus_logo.svg",
     "revision": "ff1c832025faf6ebb36c3385ee1434c5"
   },
   {
