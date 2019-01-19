@@ -268,10 +268,6 @@
           8k
           <p>Frequency: <span id="demo"></span>Hz</p>
           <input type="text" class='inputfield' id='input' value='3000' oninput="setFrequency()"> <span id="demo"></span>Hz
-          <!-- <input type=button class="button" onclick='setFrequencySlider()' value="Set"> -->
-          <!-- <h2>Or type it</h2>
-          <input type="text" class='inputfield' id='input' value='4000' oninput="setFrequency()"> Hz<br /> -->
-          <!-- <input type=button class="button" onclick='setFrequency()' value="Set"> -->
         </div>
 
         <script>
@@ -291,8 +287,6 @@
         <input type="range" min="0" max="1" value="0" class="slider" id="volRange" step="0.05" onchange="setVolume()"
           oninput="setVolume()">
         <img class="img" src="/labs/stoptinnitus/img/speaker.png" alt="speaker" width="20" height="20">
-        <p></p>
-        <!-- <button class="button" onclick='setVolume()'>Set</button> -->
       </li>
 
       <li class="card_item">
@@ -324,23 +318,25 @@
 
           var playpause = function () {
             if (!connected) {
+
               //oscillator.connect(context.destination);
               // Connect Oscillator to Gain Node to Speakers
               oscillator.connect(gainNode);
               gainNode.connect(context.destination);
 
-              //setVolume();
-              /* // play right now (0 seconds from now)
+              /*
               if (iOS) {
+                // play right now (0 seconds from now)
                 oscillator.noteOn(0);
               } */
+
             }
             else {
-              //oscillator.stop(0);
-
               oscillator.disconnect();
+
               /* if (iOS) {
                 oscillator.noteOff(0);
+                oscillator.stop(0);
               } */
 
             }
@@ -348,17 +344,7 @@
           };
 
           var setVolume = function () {
-            /*
-            var now = context.currentTime;
-          gain.gain.setValueAtTime(0, now);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
-
-            var input1 = document.getElementById('volRange');
-             gain.gain.setValueAtTime(input1, now);
-            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
-            gain.gain.value = +volRange.value; */
             var vol = document.getElementById("volRange").value;
-            //document.getElementById("volRange").value = vol;
             //var now = context.currentTime;
             //gainNode.gain.setValueAtTime(vol, now);
             //gainNode.gain.exponentialRampToValueAtTime(vol, now + 0.5);	
@@ -379,7 +365,6 @@
             oscillator.frequency.value = +input.value;
             var freq = document.getElementById("freqRange").value;
             document.getElementById("input").value = freq;
-            //document.getElementById("input").value = input.value;
           }
         </script>
       </li>
