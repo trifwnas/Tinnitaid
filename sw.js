@@ -15,7 +15,7 @@ workbox.precaching.precacheAndRoute([
     "revision": "ff1c832025faf6ebb36c3385ee1434c5"
   },
   {
-    "url": "offline.html",
+    "url": "/offline.html",
     "revision": "df128d26bb435e2363e54cb03a59117c"
   },
   {
