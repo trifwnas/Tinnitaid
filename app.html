@@ -207,7 +207,7 @@
 <body>
   <!-- Google Analytics -->
   <amp-analytics type="googleanalytics" id="analytics-ga">
-      <script type="application/json">
+    <script type="application/json">
       {
         "vars": {
           "account": "UA-46431000-18"
@@ -250,9 +250,9 @@
         }
       }
       </script>
-    </amp-analytics>
-    <!-- /Google Analytics -->
-    
+  </amp-analytics>
+  <!-- /Google Analytics -->
+
   <header class="header">
     <amp-img src="/labs/stoptinnitus/img/amp_logo_white.svg" width="36" height="36"></amp-img>
     <h1><a href="/labs/stoptinnitus/index1.html">Stop Tinnitus</a></h1>
@@ -263,10 +263,11 @@
         <div class="slidecontainer">
           <h2>Select Frequency</h2>
           3k
-          <input type="range" min="3000" max="8000" value="3000" class="slider" id="freqRange" step="1" onchange="setFrequencySlider()" oninput="setFrequencySlider()">
+          <input type="range" min="3000" max="8000" value="3000" class="slider" id="freqRange" step="1" onchange="setFrequencySlider()"
+            oninput="setFrequencySlider()">
           8k
           <p>Frequency: <span id="demo"></span>Hz</p>
-          <input type="text" class='inputfield' id='input' value='3000' oninput="setFrequency()"> <span id="demo"></span>Hz</p><br />
+          <input type="text" class='inputfield' id='input' value='3000' oninput="setFrequency()"> <span id="demo"></span>Hz
           <!-- <input type=button class="button" onclick='setFrequencySlider()' value="Set"> -->
           <!-- <h2>Or type it</h2>
           <input type="text" class='inputfield' id='input' value='4000' oninput="setFrequency()"> Hz<br /> -->
@@ -287,7 +288,8 @@
       <li class="card_item">
         <h2>Select Volume</h2>
         <img class="img" src="/labs/stoptinnitus/img/speaker_low.png" alt="speaker_low" width="18" height="18">
-        <input type="range" min="0" max="1" value="0" class="slider" id="volRange" step="0.05" onchange="setVolume()" oninput="setVolume()">
+        <input type="range" min="0" max="1" value="0" class="slider" id="volRange" step="0.05" onchange="setVolume()"
+          oninput="setVolume()">
         <img class="img" src="/labs/stoptinnitus/img/speaker.png" alt="speaker" width="20" height="20">
         <p></p>
         <!-- <button class="button" onclick='setVolume()'>Set</button> -->
@@ -295,9 +297,9 @@
 
       <li class="card_item">
         <h2>Control the sound</h2>
-        <input id="playBtn" type=button class="button" onclick='playpause()' value="Play">
+        <input id="playBtn" type=button class="button" onclick='playpause()' value="Play/Pause">
         <script type="text/javascript">
-          
+
           // Create Web Audio API context | Temp workaround until AudioContext is standardized 
           var AudioContext = window.AudioContext || window.webkitAudioContext;
           var context = new AudioContext();
@@ -309,11 +311,11 @@
           // Volume
           // Create Gain Node
           var gainNode = context.createGain();
-          
+
           // Connect Oscillator to Gain Node to Speakers
           oscillator.connect(gainNode);
           gainNode.connect(context.destination);
-          
+
           // Init
           oscillator.start(0);
           oscillator.frequency.value = 3000;
@@ -326,7 +328,7 @@
               // Connect Oscillator to Gain Node to Speakers
               oscillator.connect(gainNode);
               gainNode.connect(context.destination);
-              
+
               //setVolume();
               /* // play right now (0 seconds from now)
               if (iOS) {
@@ -335,13 +337,13 @@
             }
             else {
               //oscillator.stop(0);
-              
+
               oscillator.disconnect();
               /* if (iOS) {
                 oscillator.noteOff(0);
               } */
-              
-              }
+
+            }
             connected = !connected;
           };
 
@@ -357,10 +359,10 @@
             gain.gain.value = +volRange.value; */
             var vol = document.getElementById("volRange").value;
             //document.getElementById("volRange").value = vol;
-            var now = context.currentTime;
-            gainNode.gain.setValueAtTime(vol, now);
+            //var now = context.currentTime;
+            //gainNode.gain.setValueAtTime(vol, now);
             //gainNode.gain.exponentialRampToValueAtTime(vol, now + 0.5);	
-            //gainNode.gain.value = vol;
+            gainNode.gain.value = vol;
           }
 
           var setFrequency = function () {
@@ -383,17 +385,17 @@
       </li>
       <li class="card_item">
         <h2>Instructions</h2>
-        <p>1. Consult your doctor!</br>
-          2. Select/Type Frequency</br>
-          3. Select Volume</br>
-          4. Hit the play button</br>
-          3. While the sound is in the background, jump to your favorite music app and listen to your music!</br></br>
-          You can always come back here to adjust the frequency or the volume of the background sound.</p>
+        <p>1. Consult your doctor!</p>
+        <p>2. Select/Type Frequency</p>
+        <p>3. Select Volume</p>
+        <p>4. Hit the play button</p>
+        <p>3. While the sound is in the background, jump to your favorite music app and listen to your music!</p>
+        <p>You can always come back here to adjust the frequency or the volume of the background sound.</p>
       </li>
       <li class="card_item">
         <h2>Policy</h2>
-        <p>The creating team of the app (Eurematic) does not hold any responsibility on how the app is used.</br>
-          By using the app you accept the above policy statement.
+        <p>The creating team of the app (Eurematic) does not hold any responsibility on how the app is used.</p>
+        <p>By using the app you accept the above policy statement.</p>
         </p>
         <a href="mailto:trif.tz@gmail.com?subject=Feedback for StopTinnitus app" class="button">Give Feedback</a>
       </li>

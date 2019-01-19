@@ -100,15 +100,24 @@
       color: black;
     }
 
-    h3 {
-      font-size: 30px;
+    h1 {
+      font-size: 24px;
+    }
+
+    h4 {
+      font-size: 50px;
+      margin: 25px;
+    }
+
+    h2 {
+      font-size: 35px;
     }
 
     p {
-      font-size: 20px;
+      font-size: 15px;
     }
 
-    .splash button {
+    .button {
       border-radius: 25px;
       color: white;
       font-weight: bold;
@@ -119,9 +128,15 @@
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 16px;
+      font-size: 15px;
       margin: 4px 2px;
+      margin-bottom: 150px;
       cursor: pointer;
+    }
+
+    .button:hover,
+    .overlay button:focus {
+      color: #FFFFFF;
     }
 
     .header {
@@ -150,34 +165,15 @@
       color: white;
     }
 
-
     .splash {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
       width: 100%;
       height: 100%;
-      min-height: 1024px;
+      padding: 1%;
       color: #f1f1f1;
       background-color: rgb(0, 0, 0);
       background-color: rgba(0, 0, 0, 0.9);
       text-align: center;
       font-size: 36px;
-    }
-
-    .splash a {
-      padding: 8px;
-      text-decoration: none;
-      font-size: 36px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-    }
-
-    .splash a:hover,
-    .overlay a:focus {
-      color: #FFFFFF;
     }
   </style>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -244,22 +240,23 @@
     <h1><a href="/">Stop Tinnitus</a></h1>
   </header>
   <div class="splash">
-    <h2>We bring the solution to Tinnitus</h2>
-    <h3>Instructions</h2>
-        <p>1. Consult your doctor!</br>
-          2. Select/Type Frequency</br>
-          3. Select Volume</br>
-          4. Hit the play button</br>
-          3. While the sound is in the background, jump to your favorite music app and listen to your music!</br></br>
-          You can always come back here to adjust the frequency or the volume of the background sound.</p>
-    <h3>Policy</h2>
-    <p>The creating team of the app (Eurematic) does not hold any responsibility on how the app is used.</br>
-      By using the app you accept the above policy statement.
-    </p>
-    <h3>Compatibility</h2>
+    <h4>We bring the solution to Tinnitus</h1>
+    <h2>Instructions</h2>
+    <p>1. Consult your doctor!</p>
+    <p>2. Select/Type Frequency</p>
+    <p>3. Select Volume</p>
+    <p>4. Hit the play button</p>
+    <p>3. While the sound is in the background, jump to your favorite music app and listen to your music!</p>
+    <p>You can always come back here to adjust the frequency or the volume of the background sound.</p>
+    <a href="app.html" class="button">Start treatment</a>
+    <h2>Policy</h2>
+    <p>The creating team of the app (Eurematic) does not hold any responsibility on how the app is used.</p>
+    <p>By using the app you accept the above policy statement.</p>
+
+    <h2>Compatibility</h2>
       <p>This app is not supported from Internet Explorer and Safari on iOS.
       </p>
-    <a href="app.html" class="enter_link">Start treatment</a>
+      
   </div>
   <amp-install-serviceworker src="/sw.js" layout="nodisplay" data-iframe-src="/install-service-worker.html">
   </amp-install-serviceworker>
