@@ -5,10 +5,10 @@
   "scope": "/",
   "background_color": "#00796b",
   "display": "standalone",
-  "start_url": "https://eurematic.com/labs/stoptinnitus/index.html",
+  "start_url": "https://eurematic.com/labs/stoptinnitus",
   "icons": [
       {
-          "src": "/images/../../img/favicon/android-chrome-72x72.png",
+          "src": "/images/../img/favicon/android-chrome-72x72.png",
           "sizes": "72x72",
           "type": "image/png"
       },
