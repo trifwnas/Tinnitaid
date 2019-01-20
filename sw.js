@@ -78,24 +78,10 @@ function fromServer(request){
   return fetch(request).then(function(response){ return response});
 }
 
+/* 
+Old sW
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-https://eurematic.com/labs/stoptinnitus/sw.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-https://eurematic.com/labs/stoptinnitus/sw.js');
 
 workbox.precaching.precacheAndRoute([
   {

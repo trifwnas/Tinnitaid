@@ -7,7 +7,7 @@
 									  (__)
 */
 module.exports = {
-  "globDirectory": "./",
+  "globDirectory": "https://eurematic.com/labs/stoptinnitus/",
   "globPatterns": [
     "img/**.*",
     "offline.html",
