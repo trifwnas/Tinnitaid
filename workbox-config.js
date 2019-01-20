@@ -13,8 +13,8 @@ module.exports = {
     "offline.html",
     "icons/**.*"
   ],
-  "swSrc": "src/sw.js",
-  "swDest": "sw.js",
+  "swSrc": "https://eurematic.com/labs/stoptinnitus/sw.js",
+  "swDest": "https://eurematic.com/labs/stoptinnitus/sw.js",
   "globIgnores": [
     "./workbox-cli-config.js"
   ]
