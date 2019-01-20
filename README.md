@@ -37,3 +37,18 @@ stopTinnitus web app uses PWA (to look and act as a mobile app) and AMP (to load
 Known bugs so far:
 - Does not play the sound on iOS (it will not work on Safari but it does not work on Chrome either)
 - If app.html page reloads the player does not work
+- Various for AMP and PWA best practices
+
+Future steps:
+- Register/Login with Facebook, Twitter and Google
+-- Save Frequency and Volume preference
+-- Use the above settings when Login
+- Memberships
+-- Doctor / Patient
+-- Create, Edit, Delete membership - fixed price each month
+- Data collection
+-- Most used frequencies / volume settings
+-- Geolocate
+
+Thanks for using, sharing or contributing to this repo!
+FYI: The most valuable contributors will get a contract for remote work to be part of our team if they are interested! :)
