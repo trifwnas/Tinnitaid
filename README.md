@@ -69,7 +69,7 @@ Download stopTinnitus by cloning the Git repository:
 
 ## Usage
 
-Just go to: **[[https://eurematic.com/labs/stoptinnitus/](https://eurematic.com/labs/stoptinnitus/)**
+Just go to: **[https://eurematic.com/labs/stoptinnitus/](https://eurematic.com/labs/stoptinnitus/)**
 
 ## Known bugs so far:
 
@@ -80,13 +80,19 @@ Just go to: **[[https://eurematic.com/labs/stoptinnitus/](https://eurematic.com/
 ## Future steps:
 
 - Register/Login with Facebook, Twitter and Google
+
 -- Save Frequency and Volume preference
+
 -- Use the above settings when Login
 - Memberships
+
 -- Doctor / Patient
+
 -- Create, Edit, Delete membership - fixed price each month
 - Data collection
+
 -- Most used frequencies / volume settings
+
 -- Geolocate
 
 ## Thanks
