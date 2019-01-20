@@ -51,4 +51,5 @@ Future steps:
 -- Geolocate
 
 Thanks for using, sharing or contributing to this repo!
-FYI: The most valuable contributors will get a contract for remote work to be part of our team if they are interested! :)
+
+FYI: The most valuable contributors might get a contract - when we start making money - for remote work to be part of our core team if they are interested! :)
