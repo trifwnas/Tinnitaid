@@ -79,9 +79,13 @@ Just go to: **[https://eurematic.com/labs/stoptinnitus/](https://eurematic.com/l
 
 ## Future steps:
 
+- Save Frequency and Volume preference on browser
+
+-- Use the above settings when same user
+
 - Register/Login with Facebook, Twitter and Google
 
--- Save Frequency and Volume preference
+-- Save Frequency and Volume preference on account
 
 -- Use the above settings when Login
 - Memberships
