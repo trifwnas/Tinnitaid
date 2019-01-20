@@ -29,4 +29,10 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
 ************************************************************************
 -->
 # stoptinnitus-PWA-AMP
-This is a PWA AMP to help Tinnitus patients.
+Stop Tinnitus app intends to help tinnitus patient get rid of the noise. Please consult a doctor before using the app.
+
+Stop Tinnitus web app uses PWA (to look and act as a mobile app) and AMP (to load the pages as fast as possible) technologies.
+
+Known bugs so far:
+- Does not play the sound on iOS (it will not work on Safari but it does not work on Chrome either)
+- If app.html page reloads the player does not work
