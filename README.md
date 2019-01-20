@@ -28,11 +28,11 @@ The creating team of the app does not hold any responsibility on how the app is 
 Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/LICENSE.txt
 ************************************************************************
 -->
-# stoptinnitus-PWA-AMP
+# stopTinnitus
 <img src="https://eurematic.com/labs/stoptinnitus/img/stoptinnitus_logo_blue.png" alt="Stop Tinnitus" height="65" width="65">
-Stop Tinnitus app intends to help tinnitus patient get rid of the noise. Please consult a doctor before using the app.
+stopTinnitus app intends to help tinnitus patient get rid of the noise. Please consult a doctor before using the app.
 
-Stop Tinnitus web app uses PWA (to look and act as a mobile app) and AMP (to load the pages as fast as possible) technologies.
+stopTinnitus web app uses PWA (to look and act as a mobile app) and AMP (to load the pages as fast as possible) technologies.
 
 Known bugs so far:
 - Does not play the sound on iOS (it will not work on Safari but it does not work on Chrome either)
