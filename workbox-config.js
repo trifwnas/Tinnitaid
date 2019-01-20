@@ -1,10 +1,10 @@
 /*
-							 Developed by Tryfon Tzanetis
-								trif.tz@gmail.com
-									  ____
-									 (_  _)
-									   )( 
-									  (__)
+Developed by Tryfon Tzanetis
+    trif.tz@gmail.com
+	    	 ____
+	    	(_  _)
+	    	  )(
+	     	 (__)
 */
 module.exports = {
   "globDirectory": "https://eurematic.com/labs/stoptinnitus/",

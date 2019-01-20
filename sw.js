@@ -1,15 +1,14 @@
 /*
-							 Developed by Tryfon Tzanetis
-								trif.tz@gmail.com
-									  ____
-									 (_  _)
-									   )( 
-									  (__)
-*/
-
+Developed by Tryfon Tzanetis
+    trif.tz@gmail.com
+	    	 ____
+	    	(_  _)
+	    	  )(
+	     	 (__)
+ */
 //This is the service worker with the Cache-first network
 
-var CACHE = 'pwabuilder-precache';
+var CACHE = 'stoptinnitus-precache';
 var precacheFiles = [
       /* Add an array of files to precache for your app */
       './', './index.html', './app.html', './offline.html', './css/style.css', './js/index.js'
