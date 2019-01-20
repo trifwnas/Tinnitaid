@@ -28,8 +28,8 @@ The creating team of the app does not hold any responsibility on how the app is 
 Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/LICENSE.txt
 ************************************************************************
 -->
-# stopTinnitus
 <img src="https://eurematic.com/labs/stoptinnitus/img/stoptinnitus_logo_blue.png" alt="Stop Tinnitus" height="65" width="65">
+# stopTinnitus
 stopTinnitus app intends to help tinnitus patient get rid of the noise. Please consult a doctor before using the app.
 
 stopTinnitus web app uses PWA (to look and act as a mobile app) and AMP (to load the pages as fast as possible) technologies.
