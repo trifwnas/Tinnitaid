@@ -233,6 +233,7 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js">
   </script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 
   <!-- Google Analytics -->
   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -300,6 +301,18 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
           3k
           <input type="range" min="3000" max="8000" value="3000" class="slider" id="freqRange" step="1" onchange="setFrequencySlider()"
             oninput="setFrequencySlider()">
+
+            <!-- <form class="sample-form" method="post" action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+              <input type="range" name="points" min="0" max="10">
+              <input type="submit" value="OK">
+              <div submit-success>
+                Success!
+              </div>
+              <div submit-error>
+                Error!
+              </div>
+            </form> -->
+
           8k
           <p>Value: <span id="demo"></span>Hz
             <p>Frequency: <input type="text" class='inputfield' id='input' value='3000' oninput="setFrequency()"> <span
