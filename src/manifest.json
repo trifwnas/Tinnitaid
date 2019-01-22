@@ -5,7 +5,7 @@
   "scope": "/",
   "background_color": "#00796b",
   "display": "standalone",
-  "start_url": "https://eurematic.com/labs/stoptinnitus",
+  "start_url": "https://eurematic.com/labs/stoptinnitus/src/",
   "icons": [
       {
           "src": "images/img/favicon/apple-touch-icon-72x72.png",

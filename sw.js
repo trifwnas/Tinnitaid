@@ -1,178 +1,89 @@
-/* 
-Developed by Tryfon Tzanetis
-    trif.tz@gmail.com
-	    	 ____
-	    	(_  _)
-	    	  )(
-	     	 (__)
+// Copyright 2016 Google Inc.
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//      http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
-************************************************************************          
-StopTinnitus app intends to help tinninuts patient get rid of the noise. Please consult a doctor before using the app.
-The creating team of the app does not hold any responsibility on how the app is used. By using the app you accept this policy statement.
+var dataCacheName = 'weatherData-v1';
+var cacheName = 'weatherPWA-final-1';
+var filesToCache = [
+  '/',
+  '/index.html',
+  '/app.html',
+];
 
-    Copyright (C) 2019 Tryfon Tzanetis
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-    
-Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/LICENSE.txt
-************************************************************************
-*/
-//This is the service worker with the Cache-first network
-
-var CACHE = 'stoptinnitus-precache';
-var precacheFiles = [
-      /* Add an array of files to precache for your app */
-      './', './index.html', './app.html', './offline.html', './css/style.css', './js/index.js'
-    ];
-
-//Install stage sets up the cache-array to configure pre-cache content
-self.addEventListener('install', function(evt) {
-    const urls = [
-      'https://cdn.ampproject.org/v0.js',
-      'https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js',
-      'https://cdn.ampproject.org/shadow-v0.js',
-      'index.html',
-      '/'
-    ];
-    const cacheName = workbox.core.cacheNames.runtime;
-    event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(urls)));
-
-  console.log('The service worker is being installed.');
-  evt.waitUntil(precache().then(function() {
-    console.log('Skip waiting on install');
-    return self.skipWaiting();
-  }));
+self.addEventListener('install', function(e) {
+  console.log('[ServiceWorker] Install');
+  e.waitUntil(
+    caches.open(cacheName).then(function(cache) {
+      console.log('[ServiceWorker] Caching app shell');
+      return cache.addAll(filesToCache);
+    })
+  );
 });
 
-
-//allow sw to control of current page
-self.addEventListener('activate', function(event) {
-  console.log('Claiming clients for current page');
+self.addEventListener('activate', function(e) {
+  console.log('[ServiceWorker] Activate');
+  e.waitUntil(
+    caches.keys().then(function(keyList) {
+      return Promise.all(keyList.map(function(key) {
+        if (key !== cacheName && key !== dataCacheName) {
+          console.log('[ServiceWorker] Removing old cache', key);
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+  /*
+   * Fixes a corner case in which the app wasn't returning the latest data.
+   * You can reproduce the corner case by commenting out the line below and
+   * then doing the following steps: 1) load app for first time so that the
+   * initial New York City data is shown 2) press the refresh button on the
+   * app 3) go offline 4) reload the app. You expect to see the newer NYC
+   * data, but you actually see the initial data. This happens because the
+   * service worker is not yet activated. The code below essentially lets
+   * you activate the service worker faster.
+   */
   return self.clients.claim();
 });
 
-self.addEventListener('fetch', function(evt) {
-  console.log('The service worker is serving the asset.'+ evt.request.url);
-  evt.respondWith(fromCache(evt.request).catch(fromServer(evt.request)));
-  evt.waitUntil(update(evt.request));
-});
-
-
-function precache() {
-  return caches.open(CACHE).then(function (cache) {
-    return cache.addAll(precacheFiles);
-  });
-}
-
-function fromCache(request) {
-  //we pull files from the cache first thing so we can show them fast
-  return caches.open(CACHE).then(function (cache) {
-    return cache.match(request).then(function (matching) {
-      return matching || Promise.reject('no-match');
-    });
-  });
-}
-
-function update(request) {
-  //this is where we call the server to get the newest version of the 
-  //file to use the next time we show view
-  return caches.open(CACHE).then(function (cache) {
-    return fetch(request).then(function (response) {
-      return cache.put(request, response);
-    });
-  });
-}
-
-function fromServer(request){
-  //this is the fallback if it is not in the cache to go to the server and get it
-  return fetch(request).then(function(response){ return response});
-}
-
-/* 
-Old sW
-
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-https://eurematic.com/labs/stoptinnitus/sw.js');
-
-workbox.precaching.precacheAndRoute([
-  {
-    "url": "img/stoptinnitus_logo.svg",
-    "revision": "ff1c832025faf6ebb36c3385ee1434c5"
-  },
-  {
-    "url": "/offline.html",
-    "revision": "df128d26bb435e2363e54cb03a59117c"
-  },
-  {
-    "url": "img/favicon/apple-touch-icon-120x120.png",
-    "revision": "931389ae9534e0116433ba245d7ccbd2"
-  },
-  {
-    "url": "img/favicon/android-chrome-144x144.png",
-    "revision": "fcbfa0e31cbe00db1e7e333b0b4085a9"
-  },
-  {
-    "url": "img/favicon/apple-touch-icon-152x152.png",
-    "revision": "15c7666e3262c9a01198cc97e3dfeee2"
-  },
-  {
-    "url": "img/favicon/android-chrome-192x192.png",
-    "revision": "15bbfa9c5eda938db344c081acc21160"
-  },
-  {
-    "url": "img/favicon/android-chrome-384x384.png",
-    "revision": "435fa69761cfca1bdb521ee34e0b8dd7"
-  },
-  {
-    "url": "img/favicon/android-chrome-512x512.png",
-    "revision": "85456ca00d684bfe60a52c57b3416b8b"
-  },
-  {
-    "url": "img/favicon/android-chrome-72x72.png",
-    "revision": "3fe1e591c8f138f676c0b4d3f9eb58de"
-  },
-  {
-    "url": "img/favicon/android-chrome-96x96.png",
-    "revision": "3c0ded96a9d6cde35894280216bfb5d9"
+self.addEventListener('fetch', function(e) {
+  console.log('[Service Worker] Fetch', e.request.url);
+  var dataUrl = 'https://query.yahooapis.com/v1/public/yql';
+  if (e.request.url.indexOf(dataUrl) > -1) {
+    /*
+     * When the request URL contains dataUrl, the app is asking for fresh
+     * weather data. In this case, the service worker always goes to the
+     * network and then caches the response. This is called the "Cache then
+     * network" strategy:
+     * https://jakearchibald.com/2014/offline-cookbook/#cache-then-network
+     */
+    e.respondWith(
+      caches.open(dataCacheName).then(function(cache) {
+        return fetch(e.request).then(function(response){
+          cache.put(e.request.url, response.clone());
+          return response;
+        });
+      })
+    );
+  } else {
+    /*
+     * The app is asking for app shell files. In this scenario the app uses the
+     * "Cache, falling back to the network" offline strategy:
+     * https://jakearchibald.com/2014/offline-cookbook/#cache-falling-back-to-network
+     */
+    e.respondWith(
+      caches.match(e.request).then(function(response) {
+        return response || fetch(e.request);
+      })
+    );
   }
-]);
-
-self.addEventListener('install', event => {
-  const urls = [
-    'https://cdn.ampproject.org/v0.js',
-    'https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js',
-    'https://cdn.ampproject.org/shadow-v0.js',
-    'index.html',
-    '/'
-  ];
-  const cacheName = workbox.core.cacheNames.runtime;
-  event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(urls)));
 });
-
-workbox.routing.registerRoute(/(index|\/items\/)(.*)html|(.*)\/$/, args => {
-  return workbox.strategies.networkFirst().handle(args).then(response => {
-    if (!response) {
-      return caches.match('offline.html');
-    }
-    return response;
-  });
-});
-
-workbox.routing.registerRoute(/\.(?:js|css|png|gif|jpg|svg)$/,
-  workbox.strategies.cacheFirst()
-);
-
-workbox.routing.registerRoute(/(.*)cdn\.ampproject\.org(.*)/,
-  workbox.strategies.staleWhileRevalidate()
-);
- */
