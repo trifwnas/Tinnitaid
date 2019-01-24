@@ -44,13 +44,13 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
   <meta name="author" content="Tryfon Tzanetis">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://eurematic.com/labs/stoptinnitus/" />
-<meta property="og:site_name" content="Stop Tinnitus" />
-<meta property="og:image" itemprop="image primaryImageOfPage" content="img/favicon/android-chrome-192x192.png" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:domain" content="Stop Tinnitus" />
-<meta name="twitter:title" property="og:title" itemprop="name" content="Stop Tinnitus" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eurematic.com/labs/stoptinnitus/" />
+  <meta property="og:site_name" content="Stop Tinnitus" />
+  <meta property="og:image" itemprop="image primaryImageOfPage" content="img/favicon/android-chrome-192x192.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:domain" content="Stop Tinnitus" />
+  <meta name="twitter:title" property="og:title" itemprop="name" content="Stop Tinnitus" />
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
@@ -154,6 +154,7 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
     h4 {
       font-size: 30px;
       margin: 25px;
+      padding-top: 25px;
     }
 
     h2 {
@@ -164,7 +165,61 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
       font-size: 15px;
     }
 
+    .card {
+      display: block;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .card_item {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 600px;
+      padding-bottom: 25px;
+      border-radius: 4px;
+      background-color: #F5F5F5;
+      text-align: center;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .card_item:first-child {
+      margin-top: 0;
+    }
+
+    .card_item_img {
+      display: inline;
+      margin: 8px;
+    }
+
+    .card_item h2 {
+      padding-top: 25px;
+    }
+
+    .item  {
+      margin: 8px 16px;
+    }
+
+    .related h2 {
+      margin: 8px 16px;
+    }
+
     .button {
+      border-radius: 25px;
+      color: white;
+      font-weight: bold;
+      background-color: #1976D2;
+      box-shadow: 0px 2px 5px #999999;
+      border: none;
+      padding: 14px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    /* .button {
       border-radius: 25px;
       color: white;
       font-weight: bold;
@@ -179,7 +234,7 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
       margin: 4px 2px;
       margin-bottom: 150px;
       cursor: pointer;
-    }
+    } */
 
     .button:hover,
     .overlay button:focus {
@@ -286,25 +341,22 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
     <amp-img src="/labs/stoptinnitus/img/stoptinnitus_logo.svg" width="36" height="36"></amp-img>
     <h1>Stop Tinnitus</h1>
   </header>
-  <div class="splash">
-    <h4>We bring the solution to Tinnitus</h1>
-    <h2>Instructions</h2>
-    <p>1. Consult your doctor!</p>
-    <p>2. Select/Type Frequency</p>
-    <p>3. Select Volume</p>
-    <p>4. Hit the play button</p>
-    <p>5. While the sound is in the background, jump to your favorite music app and listen to your music!</p>
-    <p>You can always come back here to adjust the frequency or the volume of the background sound.</p>
-    <a href="app.html" class="button">Start treatment</a>
-    <h2>Policy</h2>
-    <p>The creating team of the app (Eurematic) does not hold any responsibility on how the app is used.</p>
-    <p>By using the app you accept the above policy statement.</p>
+  <ul class="card">
+    <li class="card_item">
+      <h4>We bring the solution to Tinnitus</h1>
+        <a href="app.html" class="button">Start treatment</a>
+    </li>
+    <li class="card_item">
+      <h2>Policy</h2>
+      <p>The creating team of the app (Eurematic) does not hold any responsibility on how the app is used.</p>
+      <p>By using the app you accept the above policy statement.</p>
 
-    <h2>Compatibility</h2>
+      <h2>Compatibility</h2>
       <p>This app is not supported from Internet Explorer and Safari on iOS.
       </p>
-      
-  </div>
+
+    </li>
+  </ul>
   <amp-install-serviceworker src="https://eurematic.com/labs/stoptinnitus/sw.js" layout="nodisplay" data-iframe-src="/install-service-worker.html">
   </amp-install-serviceworker>
 </body>
