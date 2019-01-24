@@ -361,31 +361,55 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
           var connected = false;
           gainNode.gain.value = 0.2;
 
+          /* function iOS() {
+            var iDevices = [
+              'iPad Simulator',
+              'iPhone Simulator',
+              'iPod Simulator',
+              'iPad',
+              'iPhone',
+              'iPod'
+            ];
+            
+            if ((!navigator.platform) || (!navigator.userAgent)) {
+              while (iDevices.length) {
+                if ((navigator.platform == iDevices.pop()) || (navigator.userAgent == iDevices.pop())) {
+                  return true;
+                }
+              }
+            }
+            return false;
+          } */
+
+          var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
           var playpause = function () {
             if (!connected) {
 
-              //oscillator.connect(context.destination);
-
-              // Connect Oscillator to Gain Node to Speakers
-              oscillator.connect(gainNode);
-              gainNode.connect(context.destination);
-
-              /*
               if (iOS) {
+                alert("You are using Safari on iOS!");
                 // play right now (0 seconds from now)
                 oscillator.noteOn(0);
-              } */
+              }
+              else{
+                // Connect Oscillator to Gain Node to Speakers
+                oscillator.connect(gainNode);
+                
+              }
+              gainNode.connect(context.destination);
 
             }
             else {
-              oscillator.disconnect();
-              gainNode.disconnect();
 
-              /* if (iOS) {
+              if (iOS) {
                 oscillator.noteOff(0);
-                oscillator.stop(0);
-              } */
-
+                //oscillator.stop(0);
+              }
+              else{
+                oscillator.disconnect();
+                
+              }
+              gainNode.disconnect();
             }
             connected = !connected;
           };
@@ -424,13 +448,13 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
         <p>5. While the sound is in the background, jump to your favorite music app and listen to your music!</p>
         <p> You can even combine the background sound with sounds of nature which help in Tinnitus treatment.</p>
         <p>Inspiration can be found here:</p>
-        <a href="https://soundcloud.com/nature-sounds" target="_blank">Link </a> or: <a href="https://www.moodil.com/" target="_blank">Link</a> or by searchin online: 
-        <a href="https://www.google.dk/search?num=50&newwindow=1&ei=ZaxJXNr5D8zYwQLzjK6YBA&q=nature+sounds+player&oq=nature+sounds+player&gs_l=psy-ab.3..0j0i22i30l2.1216199.1218179..1218294...0.0..0.70.464.7......0....1..gws-wiz.......0i71.YWFcqIOCPdA" target="_blank">Google Search</a>
+        <a href="https://soundcloud.com/nature-sounds" target="_blank">Source 1</a> or: <a href="https://www.moodil.com/" target="_blank">Source 2</a> or by searchin online: 
+        <a href="https://www.google.dk/search?num=50&newwindow=1&ei=ZaxJXNr5D8zYwQLzjK6YBA&q=nature+sounds+player&oq=nature+sounds+player&gs_l=psy-ab.3..0j0i22i30l2.1216199.1218179..1218294...0.0..0.70.464.7......0....1..gws-wiz.......0i71.YWFcqIOCPdA" target="_blank">Source 3</a>
         <p>You can always come back here to adjust the frequency or the volume of the background sound.</p>
       </li>
       <li class="card_item">
         <h2>Policy</h2>
-        <p>The creating team of the app (Eurematic) does not hold any responsibility on how the app is used.</p>
+        <p>The creating team of the app does not hold any responsibility on how the app is used.</p>
         <p>By using the app you accept the above policy statement.</p>
         </p>
         <a href="mailto:trif.tz@gmail.com?subject=Feedback for StopTinnitus app" class="button">Give Feedback</a>
@@ -438,8 +462,6 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
 
     </ul>
   </div>
-  <!-- <amp-install-serviceworker src="https://eurematic.com/labs/stoptinnitus/sw.js" layout="nodisplay" data-iframe-src="/install-service-worker.html">
-  </amp-install-serviceworker> -->
 </body>
 
 </html>
