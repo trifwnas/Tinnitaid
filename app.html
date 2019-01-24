@@ -381,13 +381,17 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
             return false;
           } */
 
+          var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
           var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+          if (isSafari && iOS) {
+            alert("The app is not supported by Safari on iOS! Please use Chrome.");
+          }
 
           var playpause = function () {
             if (!connected) {
 
               if (iOS) {
-                alert("You are using Safari on iOS!");
                 // play right now (0 seconds from now)
                 oscillator.noteOn(0);
               }
