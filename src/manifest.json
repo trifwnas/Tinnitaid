@@ -1,118 +1,133 @@
 {
-  "name": "Stop Tinnitus",
-  "short_name": "StopTinnitus",
-  "theme_color": "#1976D2",
-  "scope": "/",
-  "background_color": "#00796b",
-  "display": "standalone",
-  "start_url": "https://eurematic.com/labs/stoptinnitus/src/",
-  "icons": [
-      {
-          "src": "images/img/favicon/apple-touch-icon-72x72.png",
-          "sizes": "72x72",
-          "type": "image/png"
-      },
-      {
-          "src": "images/img/favicon/android-chrome-96x96.png",
-          "sizes": "96x96",
-          "type": "image/png"
-      },
-      {
-          "src": "images/img/favicon/apple-touch-icon-120x120.png",
-          "sizes": "120x120",
-          "type": "image/png"
-      },
-      {
-          "src": "images/img/favicon/android-chrome-144x144.png",
-          "sizes": "144x144",
-          "type": "image/png"
-      },
-      {
-          "src": "images/img/favicon/apple-touch-icon-152x152.png",
-          "sizes": "152x152",
-          "type": "image/png"
-      },
-      {
-          "src": "images/img/favicon/android-chrome-192x192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-      },
-      {
-          "src": "images/img/favicon/android-chrome-384x384.png",
-          "sizes": "384x384",
-          "type": "image/png"
-      },
-      {
-          "src": "images/img/favicon/android-chrome-512x512.png",
-          "sizes": "512x512",
-          "type": "image/png"
-      },
-      {
-          "src": "images/5e86a0ee-dbec-7301-f24f-01bcfbaecde6.webPlatform.png",
-          "sizes": "44x44",
-          "type": "image/png"
-      },
-      {
-          "src": "images/a46deb4e-90d9-ee1e-013e-26fd14aa573b.webPlatform.png",
-          "sizes": "48x48",
-          "type": "image/png"
-      },
-      {
-          "src": "images/16c37605-193b-263c-7965-eb9612da2c57.webPlatform.png",
-          "sizes": "1240x600",
-          "type": "image/png"
-      },
-      {
-          "src": "images/774f0834-3b22-3022-73bb-ed1c0e749762.webPlatform.png",
-          "sizes": "300x300",
-          "type": "image/png"
-      },
-      {
-          "src": "images/d5efbf8e-3b16-cc15-3560-5cd064616663.webPlatform.png",
-          "sizes": "150x150",
-          "type": "image/png"
-      },
-      {
-          "src": "images/c08e0fc2-8ac3-c998-db1d-24fd38acb6d8.webPlatform.png",
-          "sizes": "88x88",
-          "type": "image/png"
-      },
-      {
-          "src": "images/bf724394-a8ac-dc6d-b39a-df2a0939f47b.webPlatform.png",
-          "sizes": "24x24",
-          "type": "image/png"
-      },
-      {
-          "src": "images/c769f880-68dc-fc65-562e-2c13349a9ad1.webPlatform.png",
-          "sizes": "50x50",
-          "type": "image/png"
-      },
-      {
-          "src": "images/912b7659-e99f-2fe4-c930-1ab743674b3e.webPlatform.png",
-          "sizes": "620x300",
-          "type": "image/png"
-      },
-      {
-          "src": "images/4c3bb8b7-d9b9-915f-71e8-5a18dbd5b658.webPlatform.png",
-          "sizes": "36x36",
-          "type": "image/png"
-      },
-      {
-          "src": "images/edd1ce11-251f-093c-84bd-a0f4732b9a0a.webPlatform.png",
-          "sizes": "1024x1024",
-          "type": "image/png"
-      },
-      {
-          "src": "images/3457c9fb-aecc-be02-fa7f-e2a11b4f5ab3.webPlatform.png",
-          "sizes": "180x180",
-          "type": "image/png"
-      },
-      {
-          "src": "images/f63f04bc-6fac-fc62-781f-9c302304a0f0.webPlatform.png",
-          "sizes": "76x76",
-          "type": "image/png"
-      }
-  ],
-  "lang": "en",
-  "description": "An app to help tinnitus patients."
+    "name": "Stop Tinnitus",
+    "short_name": "StopTinnitus",
+    "theme_color": "#1976D2",
+    "scope": "/",
+    "background_color": "#00796b",
+    "display": "standalone",
+    "start_url": "https://eurematic.com/labs/stoptinnitus/src/",
+    "icons": [
+        {
+            "src": "img/favicon/android-chrome-36x36.png",
+            "sizes": "36x36",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/android-chrome-48x48.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/apple-touch-icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/android-chrome-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/apple-touch-icon-120x120.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/android-chrome-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/apple-touch-icon-152x152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/android-chrome-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/5e86a0ee-dbec-7301-f24f-01bcfbaecde6.webPlatform.png",
+            "sizes": "44x44",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/a46deb4e-90d9-ee1e-013e-26fd14aa573b.webPlatform.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/16c37605-193b-263c-7965-eb9612da2c57.webPlatform.png",
+            "sizes": "1240x600",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/774f0834-3b22-3022-73bb-ed1c0e749762.webPlatform.png",
+            "sizes": "300x300",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/d5efbf8e-3b16-cc15-3560-5cd064616663.webPlatform.png",
+            "sizes": "150x150",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/c08e0fc2-8ac3-c998-db1d-24fd38acb6d8.webPlatform.png",
+            "sizes": "88x88",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/bf724394-a8ac-dc6d-b39a-df2a0939f47b.webPlatform.png",
+            "sizes": "24x24",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/c769f880-68dc-fc65-562e-2c13349a9ad1.webPlatform.png",
+            "sizes": "50x50",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/912b7659-e99f-2fe4-c930-1ab743674b3e.webPlatform.png",
+            "sizes": "620x300",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/4c3bb8b7-d9b9-915f-71e8-5a18dbd5b658.webPlatform.png",
+            "sizes": "36x36",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/edd1ce11-251f-093c-84bd-a0f4732b9a0a.webPlatform.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/3457c9fb-aecc-be02-fa7f-e2a11b4f5ab3.webPlatform.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "img/favicon/f63f04bc-6fac-fc62-781f-9c302304a0f0.webPlatform.png",
+            "sizes": "76x76",
+            "type": "image/png"
+        }
+    ],
+    "lang": "en",
+    "description": "An app to help tinnitus patients."
 }
