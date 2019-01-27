@@ -1,11 +1,13 @@
 {
     "name": "Stop Tinnitus",
     "short_name": "StopTinnitus",
+    "description": "An app to help tinnitus patients.",
     "theme_color": "#1976D2",
     "scope": "/",
     "background_color": "#00796b",
     "display": "standalone",
     "start_url": "https://eurematic.com/labs/stoptinnitus/src/",
+    "lang": "en",
     "icons": [
         {
             "src": "img/favicon/android-chrome-36x36.png",
@@ -127,7 +129,5 @@
             "sizes": "76x76",
             "type": "image/png"
         }
-    ],
-    "lang": "en",
-    "description": "An app to help tinnitus patients."
+    ]
 }

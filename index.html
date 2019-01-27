@@ -141,6 +141,7 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
       height: 100%;
       font-family: 'Jura', sans-serif;
       background-color: #F5F5F5;
+      text-align: center;
     }
 
     a {
@@ -152,14 +153,16 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
       font-size: 24px;
     }
 
-    h4 {
+    h2 {
       font-size: 30px;
       margin: 25px;
       padding-top: 25px;
+      text-align: center;
     }
 
-    h2 {
+    h3 {
       font-size: 25px;
+      padding-top: 25px;
     }
 
     p {
@@ -220,26 +223,9 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
       cursor: pointer;
     }
 
-    /* .button {
-      border-radius: 25px;
-      color: white;
-      font-weight: bold;
-      background-color: #1976D2;
-      box-shadow: 0px 2px 5px #999999;
-      border: none;
-      padding: 14px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 15px;
-      margin: 4px 2px;
-      margin-bottom: 150px;
-      cursor: pointer;
-    } */
-
     .button:hover,
     .overlay button:focus {
-      color: #FFFFFF;
+      box-shadow: 0px 2px 15px #999999;
     }
 
     .header {
@@ -340,22 +326,22 @@ Please refer here for the full license: http://eurematic.com/labs/stoptinnitus/L
 
   <header class="header">
     <amp-img src="src/img/stoptinnitus_logo.svg" width="36" height="36"></amp-img>
-    <h1>Stop Tinnitus</h1>
+    <h1><a href="app.html">Stop Tinnitus</a></h1>
   </header>
   <ul class="card">
     <li class="card_item">
-      <h4>We bring the solution to Tinnitus</h1>
+      <h2>We bring the solution to Tinnitus</h2>
         <a href="app.html" class="button">Start treatment</a>
     </li>
     <li class="card_item">
-      <h2>Policy</h2>
+      <h3>Policy</h3>
       <p>The creating team of the app does not hold any responsibility on how the app is used.</p>
       <p>By using the app you accept the above policy statement.</p>
-
-      <h2>Compatibility</h2>
-      <p>This app is not supported from Internet Explorer and Safari on iOS.
+    </li>
+    <li class="card_item">
+      <h3>Compatibility</h3>
+      <p>This app is not supported from Safari on iOS and Internet Explorer.
       </p>
-
     </li>
   </ul>
   <amp-install-serviceworker src="sw.js" layout="nodisplay" data-iframe-src="install-service-worker.html">
