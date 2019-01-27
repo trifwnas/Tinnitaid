@@ -35,8 +35,8 @@ module.exports = {
     "offline.html",
     "icons/**.*"
   ],
-  "swSrc": "sw.js",
-  "swDest": "sw.js",
+  "swSrc": "src/scripts/sw.js",
+  "swDest": "src/scripts/sw.js",
   "globIgnores": [
     "./workbox-cli-config.js"
   ]
