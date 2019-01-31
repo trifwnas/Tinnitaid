@@ -4,12 +4,12 @@ var CACHE = 'precache';
 var precacheFiles = [
       /* Array of files to precache */
       // '/',
-      'index.html',
-      'app.html',
-      'src/scripts/app.js',
-      'src/scripts/sw.js',
-      'src/scripts/main.js',
-      'src/scripts/workbox-config.js',
+      '../../index.html',
+      '../../app.html',
+      'app.js',
+      'sw.js',
+      'main.js',
+      'workbox-config.js',
     ];
 
 //Install stage sets up the cache-array to configure pre-cache content
