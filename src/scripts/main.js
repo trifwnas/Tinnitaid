@@ -79,7 +79,6 @@ function webAudioTouchUnlock (context)
 }
 
 // *** MUSIC PLAYER SCRIPT ***
-
 // Create Web Audio API context | Temp workaround until AudioContext is standardized 
 var AudioContext = window.AudioContext || window.webkitAudioContext;
 var context = new AudioContext();
