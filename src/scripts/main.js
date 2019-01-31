@@ -35,8 +35,48 @@ var output = document.getElementById("demo");
 output.innerHTML = slider.value;
 slider.oninput = function () {
 output.innerHTML = this.value;}
+// *** //SLIDE SHOW VALUE SCRIPT ***
 
+// *** iOS CHECK SCRIPT ***
+var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
+if (isSafari && iOS) {
+  alert("The app is not supported by Safari on iOS! Please use Chrome.");
+}
+// *** //iOS CHECK SCRIPT ***
+
+// *** iOS CHECK SCRIPT ***
+function webAudioTouchUnlock (context)
+{
+    return new Promise(function (resolve, reject)
+    {
+        if (context.state === 'suspended' && 'ontouchstart' in window)
+        {
+            var unlock = function()
+            {
+                context.resume().then(function()
+                {
+                    document.body.removeEventListener('touchstart', unlock);
+                    document.body.removeEventListener('touchend', unlock);
+
+                    resolve(true);
+                }, 
+                function (reason)
+                {
+                    reject(reason);
+                });
+            };
+
+            document.body.addEventListener('touchstart', unlock, false);
+            document.body.addEventListener('touchend', unlock, false);
+        }
+        else
+        {
+            resolve(false);
+        }
+    });
+}
 
 // *** MUSIC PLAYER SCRIPT ***
 
@@ -54,57 +94,56 @@ var gainNode = context.createGain();
 
 // Init
 oscillator.start(0);
-oscillator.frequency.value = 3000;
+oscillator.frequency.value = 1000;
 var connected = false;
 gainNode.gain.value = 0.2;
 
-/* function iOS() {
-  var iDevices = [
-    'iPad Simulator',
-    'iPhone Simulator',
-    'iPod Simulator',
-    'iPad',
-    'iPhone',
-    'iPod'
-  ];
-  
-  if ((!navigator.platform) || (!navigator.userAgent)) {
-    while (iDevices.length) {
-      if ((navigator.platform == iDevices.pop()) || (navigator.userAgent == iDevices.pop())) {
-        return true;
-      }
-    }
-  }
-  return false;
-} */
-
-var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
-var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-if (isSafari && iOS) {
-  alert("The app is not supported by Safari on iOS! Please use Chrome.");
-}
-
 var playpause = function () {
   if (!connected) {
+    gainNode.connect(context.destination);
 
-    if (iOS) {
+    webAudioTouchUnlock(context).then(function (unlocked)
+    {
+        if(unlocked)
+        {
+            // AudioContext was unlocked from an explicit user action,
+            // sound should start playing now
+            oscillator.start(0);
+            oscillator.connect(gainNode);
+            oscillator.noteOn(0);
+        }
+        else
+        {
+            // There was no need for unlocking, devices other than iOS
+            oscillator.connect(gainNode);
+        }
+    },
+    function(reason)
+    {
+        console.error(reason);
+    });
+
+
+
+
+
+    /* if (iOS) {
       // play right now (0 seconds from now)
+      oscillator.start(0);
+      oscillator.connect(gainNode);
       oscillator.noteOn(0);
     }
     else{
       // Connect Oscillator to Gain Node to Speakers
       oscillator.connect(gainNode);
-      
-    }
-    gainNode.connect(context.destination);
-
+      } */
+    
   }
   else {
 
     if (iOS) {
-      oscillator.noteOff(0);
-      //oscillator.stop(0);
+      //oscillator.noteOff(0);
+      oscillator.stop(0);
     }
     else{
       oscillator.disconnect();
@@ -114,15 +153,16 @@ var playpause = function () {
   }
   connected = !connected;
 };
+// *** //MUSIC PLAYER SCRIPT ***
 
+// *** VOLUME SCRIPT ***
 var setVolume = function () {
   var vol = document.getElementById("volRange").value;
-  //var now = context.currentTime;
-  //gainNode.gain.setValueAtTime(vol, now);
-  //gainNode.gain.exponentialRampToValueAtTime(vol, now + 0.5);	
   gainNode.gain.value = vol;
 }
+// *** //VOLUME SCRIPT ***
 
+// *** FREQUENCY SCRIPT ***
 var setFrequency = function () {
   var input = document.getElementById('input');
   oscillator.frequency.value = +input.value;
@@ -131,10 +171,13 @@ var setFrequency = function () {
   var output = document.getElementById("demo");
   output.innerHTML = freq;
 }
+// *** //FREQUENCY SCRIPT ***
 
+// *** FREQUENCY SLIDER SCRIPT ***
 var setFrequencySlider = function () {
   var input = document.getElementById('freqRange');
   oscillator.frequency.value = +input.value;
   var freq = document.getElementById("freqRange").value;
   document.getElementById("input").value = freq;
 }
+// *** //FREQUENCY SLIDER SCRIPT ***
