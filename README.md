@@ -29,7 +29,7 @@ For the complete license, please refer here: http://eurematic.com/labs/stoptinni
 ************************************************************************
 -->
 <p align="center">
-  <img alt="Stop Tinnitus" src="https://eurematic.com/labs/stoptinnitus/img/stoptinnitus_logo_blue.png" height="142"/>
+  <img alt="Stop Tinnitus" src="https://eurematic.com/labs/stoptinnitus/src/img/stoptinnitus_logo_blue.png" height="142"/>
   <p align="center">
     <a href="https://github.com/trifwnas/stopTinnitus/blob/master/LICENSE.txt"><img alt="GPLv3 License" src="https://img.shields.io/badge/License-GPLv3-red.svg"></a>
     <a href="https://twitter.com/trifwnas"><img alt="Twitter" src="https://img.shields.io/badge/twitter-%40trifwnas-blue.svg"></a>
