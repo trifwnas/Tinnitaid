@@ -42,7 +42,7 @@ var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
 if (isSafari && iOS) {
-  alert("The app is not supported by Safari on iOS! Please use Chrome.");
+  alert("You are using Safari on iOS! The feature of listening to your music in parallel with the generated sound is not allowed in this browser. Please use Chrome.");
 }
 // *** //iOS CHECK SCRIPT ***
 
@@ -101,42 +101,35 @@ var playpause = function () {
   if (!connected) {
     gainNode.connect(context.destination);
 
+    if (iOS) {
     webAudioTouchUnlock(context).then(function (unlocked)
     {
         if(unlocked)
         {
             // AudioContext was unlocked from an explicit user action,
             // sound should start playing now
-            oscillator.start(0);
             oscillator.connect(gainNode);
-            oscillator.noteOn(0);
+            oscillator.start(0);
         }
         else
         {
-            // There was no need for unlocking, devices other than iOS
-            oscillator.connect(gainNode);
+            alert('Restart is needed');
+            window.location = 'http://www.eurematic.com/labs/stoptinnitus/';
+            
+            // Device other than iOS
+            //oscillator.connect(gainNode);
+            //oscillator.start(0);
         }
     },
     function(reason)
     {
         console.error(reason);
     });
-
-
-
-
-
-    /* if (iOS) {
-      // play right now (0 seconds from now)
-      oscillator.start(0);
-      oscillator.connect(gainNode);
-      oscillator.noteOn(0);
     }
     else{
-      // Connect Oscillator to Gain Node to Speakers
-      oscillator.connect(gainNode);
-      } */
-    
+        // Non-iOS
+        oscillator.connect(gainNode);
+    }
   }
   else {
 
@@ -145,8 +138,8 @@ var playpause = function () {
       oscillator.stop(0);
     }
     else{
-      oscillator.disconnect();
-      
+    // Non-iOS Sound off
+      oscillator.disconnect();      
     }
     gainNode.disconnect();
   }
