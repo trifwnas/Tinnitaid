@@ -36,8 +36,8 @@ module.exports = {
     "offline.html",
     "icons/**.*"
   ],
-  "swSrc": "src/scripts/sw.js",
-  "swDest": "src/scripts/sw.js",
+  "swSrc": "/labs/stoptinnitus/sw.js",
+  "swDest": "/labs/stoptinnitus/sw.js",
   "globIgnores": [
     "./workbox-cli-config.js"
   ]

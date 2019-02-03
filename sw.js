@@ -1,15 +1,16 @@
 // Service Worker with Cache-first network
 
-var CACHE = 'precache';
+var CACHE = 'stopTinnitusPrecache';
 var precacheFiles = [
       /* Array of files to precache */
       // '/',
-      '../../index.html',
-      '../../app.html',
-      'app.js',
-      'sw.js',
-      'main.js',
-      'workbox-config.js',
+      '/labs/stoptinnitus/',
+      '/labs/stoptinnitus/index.html',
+      '/labs/stoptinnitus/app.html',
+      '/labs/stoptinnitus/src/scripts/app.js',
+      '/labs/stoptinnitus/src/scripts/main.js',
+      '/labs/stoptinnitus/src/scripts/workbox-config.js',
+      '/labs/stoptinnitus/src/img',
     ];
 
 //Install stage sets up the cache-array to configure pre-cache content
