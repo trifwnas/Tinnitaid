@@ -95,7 +95,7 @@ var gainNode = context.createGain();
 oscillator.start(0);
 oscillator.frequency.value = 1000;
 var connected = false;
-gainNode.gain.value = 0.2;
+gainNode.gain.value = 0;
 
 var playpause = function () {
   if (!connected) {
@@ -108,6 +108,7 @@ var playpause = function () {
         {
             // AudioContext was unlocked from an explicit user action,
             // sound should start playing now
+            alert('Sound started. Un-mute your device or select volume if you cannot hear anything.');
             oscillator.connect(gainNode);
             oscillator.start(0);
         }
@@ -132,9 +133,8 @@ var playpause = function () {
     }
   }
   else {
-
+    // If connected
     if (iOS) {
-      //oscillator.noteOff(0);
       oscillator.stop(0);
     }
     else{
