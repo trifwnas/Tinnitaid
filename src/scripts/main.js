@@ -102,13 +102,14 @@ var playpause = function () {
     gainNode.connect(context.destination);
 
     if (iOS) {
+    alert('Sound started. Un-mute your device or select volume if you cannot hear anything.');
     webAudioTouchUnlock(context).then(function (unlocked)
     {
         if(unlocked)
         {
             // AudioContext was unlocked from an explicit user action,
             // sound should start playing now
-            alert('Sound started. Un-mute your device or select volume if you cannot hear anything.');
+            
             oscillator.connect(gainNode);
             oscillator.start(0);
         }
