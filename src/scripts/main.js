@@ -95,7 +95,7 @@ var gainNode = context.createGain();
 oscillator.start(0);
 oscillator.frequency.value = 1000;
 var connected = false;
-gainNode.gain.value = 0;
+gainNode.gain.value = 0.2;
 
 var playpause = function () {
   if (!connected) {
