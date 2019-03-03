@@ -11,6 +11,10 @@ var precacheFiles = [
       '/labs/stoptinnitus/src/scripts/main.js',
       '/labs/stoptinnitus/src/scripts/workbox-config.js',
       '/labs/stoptinnitus/src/img',
+      '/labs/stoptinnitus/src/sounds/white_noise.mp3',
+      '/labs/stoptinnitus/src/sounds/white_noise.ogg',
+      '/labs/stoptinnitus/src/sounds/pink_noise.mp3',
+      '/labs/stoptinnitus/src/sounds/pink_noise.ogg',
     ];
 
 //Install stage sets up the cache-array to configure pre-cache content
