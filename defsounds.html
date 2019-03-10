@@ -61,6 +61,7 @@ For the complete license, please refer here: http://eurematic.com/labs/stoptinni
   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
   <!-- /Google Analytics -->
   <script async="" src="src/scripts/main.js"></script>
+  <script async="" src="src/scripts/sound.js"></script>
   <!-- /Scripts -->
 
   <!-- Font -->
@@ -312,6 +313,7 @@ For the complete license, please refer here: http://eurematic.com/labs/stoptinni
 
       <li class="card_item">
         <h2>White Noise</h2>
+        <button type="button" id="playBtn" class="button" onclick='whiteNoise()'>Play/Pause</button>
         <audio id="white_noise" controls loop>
             <source src="/labs/stoptinnitus/src/sounds/white_noise.ogg" type="audio/ogg">
             <source src="/labs/stoptinnitus/src/sounds/white_noise.mp3" type="audio/mpeg">
