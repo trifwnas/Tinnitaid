@@ -28,133 +28,102 @@ The creating team of the app does not hold any responsibility on how the app is 
 For the complete license, please refer here: http://eurematic.com/labs/stoptinnitus/LICENSE.txt
 ************************************************************************
  */
-// *** MUSIC PLAYER SCRIPT ***
-// Create Web Audio API context | Temp workaround until AudioContext is standardized 
-var AudioContext = window.AudioContext || window.webkitAudioContext;
-var context = new AudioContext();
 
-// Frequency
-// Create Oscillator
-var oscillator = context.createOscillator();
+var audioContext = new (window.webkitAudioContext || window.AudioContext)();
+    
+var whiteNoise = audioContext.createWhiteNoise();
+var whiteGain = audioContext.createGain();
+whiteGain.gain.value = 0;
+whiteNoise.connect(whiteGain);
+whiteGain.connect(audioContext.destination);
 
-// Volume
-// Create Gain Node
-var gainNode = context.createGain();
+var pinkNoise = audioContext.createPinkNoise();
+var pinkGain = audioContext.createGain();
+pinkGain.gain.value = 0;
+pinkNoise.connect(pinkGain);
+pinkGain.connect(audioContext.destination);
 
-// Init
-oscillator.start(0);
-oscillator.frequency.value = 1000;
-var connected = false;
-gainNode.gain.value = 0.2;
+var brownNoise = audioContext.createBrownNoise();
+var brownGain = audioContext.createGain();
+brownGain.gain.value = 0;
+brownNoise.connect(brownGain);
+brownGain.connect(audioContext.destination);
 
-var playpause = function () {
-    if (!connected) {
-      gainNode.connect(context.destination);
-  
-      if (iOS) {
-      alert('Sound started. Un-mute your device or select volume if you cannot hear anything.');
-      webAudioTouchUnlock(context).then(function (unlocked)
-      {
-          if(unlocked)
-          {
-              // AudioContext was unlocked from an explicit user action,
-              // sound should start playing now
-              
-              oscillator.connect(gainNode);
-              oscillator.start(0);
-          }
-          else
-          {
-              alert('Restart is needed');
-              window.location = 'http://www.eurematic.com/labs/stoptinnitus/';
-              
-              // Device other than iOS
-              //oscillator.connect(gainNode);
-              //oscillator.start(0);
-          }
-      },
-      function(reason)
-      {
-          console.error(reason);
-      });
-      }
-      else{
-          // Non-iOS
-          oscillator.connect(gainNode);
-      }
-    }
-    else {
-      // If connected
-      if (iOS) {
-        oscillator.stop(0);
-      }
-      else{
-      // Non-iOS Sound off
-        oscillator.disconnect();      
-      }
-      gainNode.disconnect();
-    }
-    connected = !connected;
-  };
-  // *** //MUSIC PLAYER SCRIPT ***
+var toggleDemo = function(text, gain) {
+    var handler = function(e) {
+        if (gain.gain.value == 0.0) {
+            $(e.target).text("Stop");
+            gain.gain.value = 0.3;
+        } else {
+            $(e.target).text(text);
+            gain.gain.value = 0.0;
+        }
+    };
+    return handler;
+};
 
-// *** WHITE NOISE ***
-var bufferSize = 2 * audioContext.sampleRate,
-    noiseBuffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate),
-    output = noiseBuffer.getChannelData(0);
-for (var i = 0; i < bufferSize; i++) {
-    output[i] = Math.random() * 2 - 1;
+$("#white-demo").click(toggleDemo("White Noise", whiteGain));
+$("#pink-demo").click(toggleDemo("Pink Noise", pinkGain));
+$("#brown-demo").click(toggleDemo("Brown Noise", brownGain));
+
+// *** DEFAULT SOUNDS SCRIPT ***
+(function(AudioContext) {
+	AudioContext.prototype.createWhiteNoise = function(bufferSize) {
+		bufferSize = bufferSize || 4096;
+		var node = this.createScriptProcessor(bufferSize, 1, 1);
+		node.onaudioprocess = function(e) {
+			var output = e.outputBuffer.getChannelData(0);
+			for (var i = 0; i < bufferSize; i++) {
+				output[i] = Math.random() * 2 - 1;
+			}
+		}
+		return node;
+	};
+
+	AudioContext.prototype.createPinkNoise = function(bufferSize) {
+		bufferSize = bufferSize || 4096;
+		var b0, b1, b2, b3, b4, b5, b6;
+		b0 = b1 = b2 = b3 = b4 = b5 = b6 = 0.0;
+		var node = this.createScriptProcessor(bufferSize, 1, 1);
+		node.onaudioprocess = function(e) {
+			var output = e.outputBuffer.getChannelData(0);
+			for (var i = 0; i < bufferSize; i++) {
+				var white = Math.random() * 2 - 1;
+				b0 = 0.99886 * b0 + white * 0.0555179;
+				b1 = 0.99332 * b1 + white * 0.0750759;
+				b2 = 0.96900 * b2 + white * 0.1538520;
+				b3 = 0.86650 * b3 + white * 0.3104856;
+				b4 = 0.55000 * b4 + white * 0.5329522;
+				b5 = -0.7616 * b5 - white * 0.0168980;
+				output[i] = b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362;
+				output[i] *= 0.11; // (roughly) compensate for gain
+				b6 = white * 0.115926;
+			}
+		}
+		return node;
+	};
+
+	AudioContext.prototype.createBrownNoise = function(bufferSize) {
+		bufferSize = bufferSize || 4096;
+		var lastOut = 0.0;
+		var node = this.createScriptProcessor(bufferSize, 1, 1);
+		node.onaudioprocess = function(e) {
+			var output = e.outputBuffer.getChannelData(0);
+			for (var i = 0; i < bufferSize; i++) {
+				var white = Math.random() * 2 - 1;
+				output[i] = (lastOut + (0.02 * white)) / 1.02;
+				lastOut = output[i];
+				output[i] *= 3.5; // (roughly) compensate for gain
+			}
+		}
+		return node;
+	};
+})(window.AudioContext || window.webkitAudioContext);
+
+
+// *** FREQUENCY SCRIPT ***
+var whitenoise = function () {
+  var context = new webkitAudioContext();
+  var whiteNoise = context.createWhiteNoise();
+  whiteNoise.connect(context.destination);
 }
-
-var whiteNoise = audioContext.createBufferSource();
-whiteNoise.buffer = noiseBuffer;
-whiteNoise.loop = true;
-whiteNoise.start(0);
-
-whiteNoise.connect(audioContext.destination);
-
-// *** PINK NOISE ***
-var bufferSize = 4096;
-var pinkNoise = (function() {
-    var b0, b1, b2, b3, b4, b5, b6;
-    b0 = b1 = b2 = b3 = b4 = b5 = b6 = 0.0;
-    var node = audioContext.createScriptProcessor(bufferSize, 1, 1);
-    node.onaudioprocess = function(e) {
-        var output = e.outputBuffer.getChannelData(0);
-        for (var i = 0; i < bufferSize; i++) {
-            var white = Math.random() * 2 - 1;
-            b0 = 0.99886 * b0 + white * 0.0555179;
-            b1 = 0.99332 * b1 + white * 0.0750759;
-            b2 = 0.96900 * b2 + white * 0.1538520;
-            b3 = 0.86650 * b3 + white * 0.3104856;
-            b4 = 0.55000 * b4 + white * 0.5329522;
-            b5 = -0.7616 * b5 - white * 0.0168980;
-            output[i] = b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362;
-            output[i] *= 0.11; // (roughly) compensate for gain
-            b6 = white * 0.115926;
-        }
-    }
-    return node;
-})();
-
-pinkNoise.connect(audioContext.destination);
-
-
-// *** BROWN NOISE ***
-var bufferSize = 4096;
-var brownNoise = (function() {
-    var lastOut = 0.0;
-    var node = audioContext.createScriptProcessor(bufferSize, 1, 1);
-    node.onaudioprocess = function(e) {
-        var output = e.outputBuffer.getChannelData(0);
-        for (var i = 0; i < bufferSize; i++) {
-            var white = Math.random() * 2 - 1;
-            output[i] = (lastOut + (0.02 * white)) / 1.02;
-            lastOut = output[i];
-            output[i] *= 3.5; // (roughly) compensate for gain
-        }
-    }
-    return node;
-})();
-
-brownNoise.connect(audioContext.destination);

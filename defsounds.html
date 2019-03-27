@@ -301,8 +301,8 @@ For the complete license, please refer here: http://eurematic.com/labs/stoptinni
   <!-- /Google Analytics -->
 
   <header class="header">
-    <amp-img src="src/img/stoptinnitus_logo.svg" alt="" width="36" height="36"></amp-img>
-    <h1><a href="index.html">Stop Tinnitus</a></h1>
+    <a href="index.html"><amp-img src="src/img/stoptinnitus_logo.svg" alt="" width="36" height="36"></amp-img>
+    <h1>Stop Tinnitus</a></h1>
   </header>
   <div class="content">
     <ul class="card">
@@ -312,8 +312,29 @@ For the complete license, please refer here: http://eurematic.com/labs/stoptinni
       </li>
 
       <li class="card_item">
+          <button id="white-demo">
+              White Noise
+              </button>
+              <button id="pink-demo">
+              Pink Noise
+              </button>
+              <button id="brown-demo">
+              Brown Noise
+              </button>
+        <button type="button" id="white-demo" class="button" >White Noise</button>
+        <button type="button" id="playwhitenoise" class="button" onclick='whitenoise()'>White Noise</button>
+      </li>
+
+      <li class="card_item">
+          <button type="button" id="pink-demo" class="button" >Pink Noise</button>
+        </li>
+
+        <li class="card_item">
+            <button type="button" id="brown-demo" class="button">Brown Noise</button>
+          </li>
+
+      <li class="card_item">
         <h2>White Noise</h2>
-        <button type="button" id="playBtn" class="button" onclick='whiteNoise()'>Play/Pause</button>
         <audio id="white_noise" controls loop>
             <source src="/labs/stoptinnitus/src/sounds/white_noise.ogg" type="audio/ogg">
             <source src="/labs/stoptinnitus/src/sounds/white_noise.mp3" type="audio/mpeg">
