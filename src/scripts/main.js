@@ -116,7 +116,7 @@ var playpause = function () {
         else
         {
             alert('Restart is needed');
-            window.location = 'http://www.eurematic.com/labs/stoptinnitus/';
+            window.location = 'https://www.tafhub.com/labs/stoptinnitus/';
             
             // Device other than iOS
             //oscillator.connect(gainNode);
