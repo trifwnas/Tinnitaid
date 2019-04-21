@@ -38,7 +38,8 @@ For the complete license, please refer here: http://eurematic.com/labs/stoptinni
 
 ## General Information
 
-**stopTinnitus** intends to help tinnitus patients detect and get rid of the noise. **[Read More](https://en.wikipedia.org/wiki/Tinnitus)** Please consult a doctor before using the app.
+**stopTinnitus** intends to help tinnitus patients detect and get rid of the noise. **[Read More](https://en.wikipedia.org/wiki/Tinnitus)**
+Please consult a doctor before using the app.
 stopTinnitus web app uses the technologies: PWA - to look and act as a mobile app and AMP - to load the pages as fast as possible.
 It is written by **[Tryfon Tzanetis](https://github.com/trifwnas)** (**[@trifwnas](https://twitter.com/trifwnas)**) and can be used by both tinnitus patients and doctors.
 
