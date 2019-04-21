@@ -29,7 +29,7 @@ For the complete license, please refer here: http://eurematic.com/labs/stoptinni
 ************************************************************************
 -->
 <p align="center">
-  <img alt="Stop Tinnitus" src="https://eurematic.com/labs/stoptinnitus/src/img/stoptinnitus_logo_blue.png" height="142"/>
+  <img alt="Stop Tinnitus" src="https://tafhub.com/labs/stoptinnitus/src/img/stoptinnitus_logo_blue.png" height="142"/>
   <p align="center">
     <a href="https://github.com/trifwnas/stopTinnitus/blob/master/LICENSE.txt"><img alt="GPLv3 License" src="https://img.shields.io/badge/License-GPLv3-red.svg"></a>
     <a href="https://twitter.com/trifwnas"><img alt="Twitter" src="https://img.shields.io/badge/twitter-%40trifwnas-blue.svg"></a>
@@ -38,8 +38,8 @@ For the complete license, please refer here: http://eurematic.com/labs/stoptinni
 
 ## General Information
 
-**stopTinnitus** intends to help tinnitus patient get rid of the noise. **[Read More](https://en.wikipedia.org/wiki/Tinnitus)** Please consult a doctor before using the app.
-stopTinnitus web app uses PWA (to look and act as a mobile app) and AMP (to load the pages as fast as possible) technologies.
+**stopTinnitus** intends to help tinnitus patients detect and get rid of the noise. **[Read More](https://en.wikipedia.org/wiki/Tinnitus)** Please consult a doctor before using the app.
+stopTinnitus web app uses the technologies: PWA - to look and act as a mobile app and AMP - to load the pages as fast as possible.
 It is written by **[Tryfon Tzanetis](https://github.com/trifwnas)** (**[@trifwnas](https://twitter.com/trifwnas)**) and can be used by both tinnitus patients and doctors.
 
 ## Legal Disclaimer
@@ -69,7 +69,7 @@ Download stopTinnitus by cloning the Git repository:
 
 ## Usage
 
-Just go to: **[https://eurematic.com/labs/stoptinnitus/](https://eurematic.com/labs/stoptinnitus/)**
+Just go to: **[https://tafhub.com/labs/stoptinnitus/](https://tafhub.com/labs/stoptinnitus/)**
 
 ## Known bugs so far:
 
