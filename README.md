@@ -71,13 +71,13 @@ Download stopTinnitus by cloning the Git repository:
 
 Just go to: **[https://tafhub.com/labs/stoptinnitus/](https://tafhub.com/labs/stoptinnitus/)**
 
-## Known bugs so far:
+## Known bugs so far
 
 - Does not play the sound on iOS (it will not work on Safari but it does not work on Chrome either)
 - If app.html page reloads the player does not work
 - Various for AMP and PWA best practices
 
-## Future steps:
+## Future steps
 
 - Save Frequency and Volume preference on browser
 
