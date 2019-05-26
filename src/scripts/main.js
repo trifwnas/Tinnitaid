@@ -34,7 +34,8 @@ var slider = document.getElementById("freqRange");
 var output = document.getElementById("demo");
 output.innerHTML = slider.value;
 slider.oninput = function () {
-output.innerHTML = this.value;}
+  output.innerHTML = this.value;
+}
 // *** //SLIDE SHOW VALUE SCRIPT ***
 
 // *** iOS CHECK SCRIPT ***
@@ -47,35 +48,28 @@ if (isSafari && iOS) {
 // *** //iOS CHECK SCRIPT ***
 
 // *** iOS CHECK SCRIPT ***
-function webAudioTouchUnlock (context)
-{
-    return new Promise(function (resolve, reject)
-    {
-        if (context.state === 'suspended' && 'ontouchstart' in window)
-        {
-            var unlock = function()
-            {
-                context.resume().then(function()
-                {
-                    document.body.removeEventListener('touchstart', unlock);
-                    document.body.removeEventListener('touchend', unlock);
+function webAudioTouchUnlock(context) {
+  return new Promise(function (resolve, reject) {
+    if (context.state === 'suspended' && 'ontouchstart' in window) {
+      var unlock = function () {
+        context.resume().then(function () {
+          document.body.removeEventListener('touchstart', unlock);
+          document.body.removeEventListener('touchend', unlock);
 
-                    resolve(true);
-                }, 
-                function (reason)
-                {
-                    reject(reason);
-                });
-            };
+          resolve(true);
+        },
+          function (reason) {
+            reject(reason);
+          });
+      };
 
-            document.body.addEventListener('touchstart', unlock, false);
-            document.body.addEventListener('touchend', unlock, false);
-        }
-        else
-        {
-            resolve(false);
-        }
-    });
+      document.body.addEventListener('touchstart', unlock, false);
+      document.body.addEventListener('touchend', unlock, false);
+    }
+    else {
+      resolve(false);
+    }
+  });
 }
 
 // *** MUSIC PLAYER SCRIPT ***
@@ -102,35 +96,31 @@ var playpause = function () {
     gainNode.connect(context.destination);
 
     if (iOS) {
-    alert('Sound started. Un-mute your device or select volume if you cannot hear anything.');
-    webAudioTouchUnlock(context).then(function (unlocked)
-    {
-        if(unlocked)
-        {
-            // AudioContext was unlocked from an explicit user action,
-            // sound should start playing now
-            
-            oscillator.connect(gainNode);
-            oscillator.start(0);
+      alert('Sound started. Un-mute your device or select volume if you cannot hear anything.');
+      webAudioTouchUnlock(context).then(function (unlocked) {
+        if (unlocked) {
+          // AudioContext was unlocked from an explicit user action,
+          // sound should start playing now
+
+          oscillator.connect(gainNode);
+          oscillator.start(0);
         }
-        else
-        {
-            alert('Restart is needed');
-            window.location = 'https://www.tafhub.com/labs/stoptinnitus/';
-            
-            // Device other than iOS
-            //oscillator.connect(gainNode);
-            //oscillator.start(0);
+        else {
+          alert('Restart is needed');
+          window.location = 'https://www.tafhub.com/labs/stoptinnitus/';
+
+          // Device other than iOS
+          //oscillator.connect(gainNode);
+          //oscillator.start(0);
         }
-    },
-    function(reason)
-    {
-        console.error(reason);
-    });
+      },
+        function (reason) {
+          console.error(reason);
+        });
     }
-    else{
-        // Non-iOS
-        oscillator.connect(gainNode);
+    else {
+      // Non-iOS
+      oscillator.connect(gainNode);
     }
   }
   else {
@@ -138,9 +128,9 @@ var playpause = function () {
     if (iOS) {
       oscillator.stop(0);
     }
-    else{
-    // Non-iOS Sound off
-      oscillator.disconnect();      
+    else {
+      // Non-iOS Sound off
+      oscillator.disconnect();
     }
     gainNode.disconnect();
   }
@@ -174,3 +164,17 @@ var setFrequencySlider = function () {
   document.getElementById("input").value = freq;
 }
 // *** //FREQUENCY SLIDER SCRIPT ***
+
+/* // *** BUTTON MOVES THE SLIDER SCRIPT ***
+$("#freqRange").on('change', function () {
+  var value = $(this).val();
+  $("#img").width(value);
+  $("#img").height(value);
+  // console.log(value);
+});
+$("#freqChangeBtn").click(function () {
+  //if value < max
+  $("#freqRange").val(parseInt($("#freqRange").val()) + 30);
+  $("#freqRange").trigger('change');
+});
+// *** //FREQUENCY SLIDER SCRIPT *** */
