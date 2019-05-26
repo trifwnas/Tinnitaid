@@ -25,12 +25,12 @@ The creating team of the app does not hold any responsibility on how the app is 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
     
-For the complete license, please refer here: http://eurematic.com/labs/stoptinnitus/LICENSE.txt
+For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus/LICENSE.txt
 ************************************************************************
 */
 
 module.exports = {
-  "globDirectory": "https://eurematic.com/labs/stoptinnitus/",
+  "globDirectory": "https://tafhub.com/labs/stoptinnitus/",
   "globPatterns": [
     "img/**.*",
     "offline.html",
