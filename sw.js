@@ -2,25 +2,23 @@
 
 var CACHE = 'stopTinnitusPrecache';
 var precacheFiles = [
-      /* Array of files to precache */
-      // '/',
-      '/labs/stoptinnitus/',
-      '/labs/stoptinnitus/index.html',
-      '/labs/stoptinnitus/app.html',
-      '/labs/stoptinnitus/src/scripts/app.js',
-      '/labs/stoptinnitus/src/scripts/main.js',
-      '/labs/stoptinnitus/src/scripts/workbox-config.js',
-      '/labs/stoptinnitus/src/img',
-      '/labs/stoptinnitus/src/sounds/white_noise.mp3',
-      '/labs/stoptinnitus/src/sounds/white_noise.ogg',
-      '/labs/stoptinnitus/src/sounds/pink_noise.mp3',
-      '/labs/stoptinnitus/src/sounds/pink_noise.ogg',
-    ];
+  /* Array of files to precache */
+  // '/',
+  '/labs/stoptinnitus/',
+  '/labs/stoptinnitus/index.html',
+  '/labs/stoptinnitus/app.html',
+  '/labs/stoptinnitus/therapy.html',
+  '/labs/stoptinnitus/src/scripts/app.js',
+  '/labs/stoptinnitus/src/scripts/main.js',
+  '/labs/stoptinnitus/src/scripts/therapy.js',
+  '/labs/stoptinnitus/src/scripts/workbox-config.js',
+  '/labs/stoptinnitus/src/img'
+];
 
 //Install stage sets up the cache-array to configure pre-cache content
-self.addEventListener('install', function(evt) {
+self.addEventListener('install', function (evt) {
   console.log('The service worker is being installed.');
-  evt.waitUntil(precache().then(function() {
+  evt.waitUntil(precache().then(function () {
     console.log('Skip waiting on install');
     return self.skipWaiting();
   }));
@@ -28,13 +26,13 @@ self.addEventListener('install', function(evt) {
 
 
 // Allow sw to control current page
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', function (event) {
   console.log('Claiming clients for current page');
   return self.clients.claim();
 });
 
-self.addEventListener('fetch', function(evt) {
-  console.log('The service worker is serving the asset.'+ evt.request.url);
+self.addEventListener('fetch', function (evt) {
+  console.log('The service worker is serving the asset.' + evt.request.url);
   evt.respondWith(fromCache(evt.request).catch(fromServer(evt.request)));
   evt.waitUntil(update(evt.request));
 });
@@ -65,7 +63,7 @@ function update(request) {
   });
 }
 
-function fromServer(request){
+function fromServer(request) {
   //this is the fallback if it is not in the cache to go to the server and get it
-  return fetch(request).then(function(response){ return response});
+  return fetch(request).then(function (response) { return response });
 }
