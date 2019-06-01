@@ -32,11 +32,11 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
 
 // Create Web Audio API context | Temp workaround until AudioContext is standardized 
 const AudioContext = window.AudioContext || window.webkitAudioContext;
-const audioContext = new AudioContext();
+const context = new AudioContext();
 bufferSize = 4096;
 
-var whiteNoiseNode = audioContext.createBufferSource(),
-	buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate),
+var whiteNoiseNode = context.createBufferSource(),
+	buffer = context.createBuffer(1, bufferSize, context.sampleRate),
 	data = buffer.getChannelData(0);
 for (var i = 0; i < bufferSize; i++) {
 	data[i] = Math.random() * 2 - 1;
@@ -46,10 +46,14 @@ whiteNoiseNode.loop = true;
 
 var connected = false;
 
-var playStopWhiteNoise = function () {
+// Volume
+var gainNode = context.createGain();
+gainNode.gain.value = 0.2; // 20 %
+gainNode.connect(context.destination);
 
+var playStopWhiteNoise = function () {
 	if (!connected) {
-		whiteNoiseNode.connect(audioContext.destination);
+		whiteNoiseNode.connect(gainNode);
 
 		if (iOS) {
 			alert('Sound started. Un-mute your device or select volume if you cannot hear anything.');
@@ -57,7 +61,7 @@ var playStopWhiteNoise = function () {
 				if (unlocked) {
 					// AudioContext was unlocked from an explicit user action,
 					// sound should start playing now
-					whiteNoiseNode.start(audioContext.currentTime);
+					whiteNoiseNode.start(context.currentTime);
 				}
 				else {
 					alert('Restart is needed');
@@ -70,7 +74,7 @@ var playStopWhiteNoise = function () {
 		}
 		else {
 			// Non-iOS
-			whiteNoiseNode.start(audioContext.currentTime);
+			whiteNoiseNode.start(context.currentTime);
 		}
 	}
 	else {
@@ -85,6 +89,7 @@ var playStopWhiteNoise = function () {
 			window.location = 'http://127.0.0.1:8881/therapy.html'; // testing
 			//window.location = 'https://www.tafhub.com/labs/stoptinnitus/therapy/'; //production
 		}
+		gainNode.disconnect();
 	}
 	connected = !connected;
 };
@@ -125,3 +130,10 @@ function webAudioTouchUnlock(context) {
 	});
 }
 // *** //iOS CHECK TOUCH SCRIPT ***
+
+// *** VOLUME SCRIPT ***
+var setWhiteNoiseVolume = function () {
+	var vol = document.getElementById("whiteNoiseVolRange").value;
+	gainNode.gain.value = vol;
+}
+  // *** //VOLUME SCRIPT ***

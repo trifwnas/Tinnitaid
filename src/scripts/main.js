@@ -102,7 +102,6 @@ var playpause = function () {
         if (unlocked) {
           // AudioContext was unlocked from an explicit user action,
           // sound should start playing now
-
           oscillator.connect(gainNode);
           oscillator.start(0);
         }
@@ -140,7 +139,7 @@ var playpause = function () {
 // *** //MUSIC PLAYER SCRIPT ***
 
 // *** VOLUME SCRIPT ***
-var setVolume = function () {
+var setWhiteNoiseVolume = function () {
   var vol = document.getElementById("volRange").value;
   gainNode.gain.value = vol;
 }
