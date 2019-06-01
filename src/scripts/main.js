@@ -47,7 +47,7 @@ if (isSafari && iOS) {
 }
 // *** //iOS CHECK SCRIPT ***
 
-// *** iOS CHECK SCRIPT ***
+// *** iOS CHECK TOUCH SCRIPT ***
 function webAudioTouchUnlock(context) {
   return new Promise(function (resolve, reject) {
     if (context.state === 'suspended' && 'ontouchstart' in window) {
@@ -71,6 +71,7 @@ function webAudioTouchUnlock(context) {
     }
   });
 }
+// *** //iOS CHECK TOUCH SCRIPT ***
 
 // *** MUSIC PLAYER SCRIPT ***
 // Create Web Audio API context | Temp workaround until AudioContext is standardized 

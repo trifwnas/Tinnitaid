@@ -54,13 +54,14 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
 
   <!-- Scripts -->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js">
-  </script>
+  <script async custom-element="amp-install-serviceworker"
+    src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js">
+    </script>
   <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
   <!-- Google Analytics -->
   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
   <!-- /Google Analytics -->
-  <script async="" src="src/scripts/main.js"></script>
+  <!-- <script async="" src="src/scripts/main.js"></script> -->
   <script async="" src="src/scripts/therapy.js"></script>
   <!-- /Scripts -->
 
@@ -68,8 +69,72 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
   <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
   <!-- /Font -->
 
-  <style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript>
-    <style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
+  <style amp-boilerplate="">
+    body {
+      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      animation: -amp-start 8s steps(1, end) 0s 1 normal both
+    }
+
+    @-webkit-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-moz-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-ms-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-o-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+  </style><noscript>
+    <style amp-boilerplate="">
+      body {
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        animation: none
+      }
+    </style>
   </noscript>
 
   <style amp-custom>
@@ -144,7 +209,7 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
       padding-top: 25px;
     }
 
-    .item  {
+    .item {
       margin: 8px 16px;
     }
 
@@ -221,19 +286,19 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
     }
 
     #splashscreen {
-      position:absolute;
-      top:0;
-      left:0;
-      bottom:0;
-      width:100%;
-      height:100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
       color: #f1f1f1;
-      background-color: rgb(0,0,0);
-      background-color:rgba(0,0,0, 0.9);
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.9);
       text-align: center;
       font-size: 36px;
     }
-    
+
     #splashscreen a {
       padding: 8px;
       text-decoration: none;
@@ -243,12 +308,12 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
       transition: 0.3s;
     }
 
-    #splashscreen a:hover, .overlay a:focus {
+    #splashscreen a:hover,
+    .overlay a:focus {
       color: #FFFFFF;
     }
-
   </style>
-  
+
 </head>
 
 <body>
@@ -301,81 +366,30 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
   <!-- /Google Analytics -->
 
   <header class="header">
-    <a href="index.html"><amp-img src="src/img/stoptinnitus_logo.svg" alt="" width="36" height="36"></amp-img>
-    <h1>Stop Tinnitus (beta)</a></h1>
+    <a href="index.html">
+      <amp-img src="src/img/stoptinnitus_logo.svg" alt="" width="36" height="36"></amp-img>
+      <h1>Stop Tinnitus (beta)
+    </a></h1>
   </header>
   <div class="content">
     <ul class="card">
       <li class="card_item">
-          <h2>Play one or more default sounds</h2>
-          <h3>The sounds will loop automatically.</h3>
+        <h2>Play one or more default sounds</h2>
+        <h3>The sounds will loop automatically.</h3>
       </li>
-
-      <li class="card_item">
-          <button id="white-demo">
-              White Noise
-              </button>
-              <button id="pink-demo">
-              Pink Noise
-              </button>
-              <button id="brown-demo">
-              Brown Noise
-              </button>
-        <button type="button" id="white-demo" class="button" >White Noise</button>
-        <button type="button" id="playwhitenoise" class="button" onclick='playpause()'>White Noise</button>
-      </li>
-
-      <li class="card_item">
-          <button type="button" id="pink-demo" class="button" >Pink Noise</button>
-        </li>
-
-        <li class="card_item">
-            <button type="button" id="brown-demo" class="button">Brown Noise</button>
-          </li>
 
       <li class="card_item">
         <h2>White Noise</h2>
-        <audio id="white_noise" controls loop>
-            <source src="/labs/stoptinnitus/src/sounds/white_noise.ogg" type="audio/ogg">
-            <source src="/labs/stoptinnitus/src/sounds/white_noise.mp3" type="audio/mpeg">
-          Your browser does not support the audio element, please use Chrome.
-          </audio>
+        <button type="button" class="button" onclick='playStopWhiteNoise()'>Play/Stop</button>
       </li>
-
-      <li class="card_item">
-          <h2>Pink Noise</h2>
-          <audio id="pink_noise" controls loop>
-              <source src="/labs/stoptinnitus/src/sounds/pink_noise.ogg" type="audio/ogg">
-              <source src="/labs/stoptinnitus/src/sounds/pink_noise.mp3" type="audio/mpeg">
-            Your browser does not support the audio element, please use Chrome.
-            </audio>
-        </li>
-
-        <li class="card_item">
-            <h2>Brown Noise</h2>
-            <audio id="brown_noise" controls loop>
-                <source src="/labs/stoptinnitus/src/sounds/brown_noise.ogg" type="audio/ogg">
-                <source src="/labs/stoptinnitus/src/sounds/brown_noise.mp3" type="audio/mpeg">
-              Your browser does not support the audio element, please use Chrome.
-              </audio>
-          </li>
-
-          <li class="card_item">
-              <h2>Grey Noise</h2>
-              <audio id="grey_noise" controls loop>
-                  <source src="/labs/stoptinnitus/src/sounds/grey_noise.ogg" type="audio/ogg">
-                  <source src="/labs/stoptinnitus/src/sounds/grey_noise.mp3" type="audio/mpeg">
-                Your browser does not support the audio element, please use Chrome.
-                </audio>
-            </li>
 
       <li class="card_item">
         <h2>Instructions</h2>
         <p>1. Consult your doctor!</p>
         <p>2. Play a sound</p>
         <p>3. Select Volume</p>
-        <p>4. While the sound is in the background, jump to your favorite music app and listen to your music!</p>
-        <p> You can even combine the background sound with sounds of nature which help in Tinnitus treatment.</p>
+        <p>4. While the sound is in the background, jump to your favorite music app or podcast!</p>
+        <p> You can even combine the sound sound with sounds of nature which help in Tinnitus treatment.</p>
         <p>Inspiration can be found here:</p>
         <a href="https://soundcloud.com/nature-sounds" target="_blank">Source 1</a> or: <a
           href="https://www.moodil.com/" target="_blank">Source 2</a> or by searchin online:

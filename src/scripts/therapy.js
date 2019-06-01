@@ -28,183 +28,100 @@ The creating team of the app does not hold any responsibility on how the app is 
 For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus/LICENSE.txt
 ************************************************************************
  */
+// *** NOISE GENERATOR SCRIPT ***
 
+// Create Web Audio API context | Temp workaround until AudioContext is standardized 
+const AudioContext = window.AudioContext || window.webkitAudioContext;
+const audioContext = new AudioContext();
+bufferSize = 4096;
 
-(function(AudioContext) {
-	AudioContext.prototype.createWhiteNoise = function(bufferSize) {
-		bufferSize = bufferSize || 4096;
-		var node = this.createScriptProcessor(bufferSize, 1, 1);
-		node.onaudioprocess = function(e) {
-			var output = e.outputBuffer.getChannelData(0);
-			for (var i = 0; i < bufferSize; i++) {
-				output[i] = Math.random() * 2 - 1;
-			}
+var whiteNoiseNode = audioContext.createBufferSource(),
+	buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate),
+	data = buffer.getChannelData(0);
+for (var i = 0; i < bufferSize; i++) {
+	data[i] = Math.random() * 2 - 1;
+}
+whiteNoiseNode.buffer = buffer;
+whiteNoiseNode.loop = true;
+
+var connected = false;
+
+var playStopWhiteNoise = function () {
+
+	if (!connected) {
+		whiteNoiseNode.connect(audioContext.destination);
+
+		if (iOS) {
+			alert('Sound started. Un-mute your device or select volume if you cannot hear anything.');
+			webAudioTouchUnlock(context).then(function (unlocked) {
+				if (unlocked) {
+					// AudioContext was unlocked from an explicit user action,
+					// sound should start playing now
+					whiteNoiseNode.start(audioContext.currentTime);
+				}
+				else {
+					alert('Restart is needed');
+					window.location = 'https://www.tafhub.com/labs/stoptinnitus/therapy/';
+				}
+			},
+				function (reason) {
+					console.error(reason);
+				});
 		}
-		return node;
-	};
-
-	AudioContext.prototype.createPinkNoise = function(bufferSize) {
-		bufferSize = bufferSize || 4096;
-		var b0, b1, b2, b3, b4, b5, b6;
-		b0 = b1 = b2 = b3 = b4 = b5 = b6 = 0.0;
-		var node = this.createScriptProcessor(bufferSize, 1, 1);
-		node.onaudioprocess = function(e) {
-			var output = e.outputBuffer.getChannelData(0);
-			for (var i = 0; i < bufferSize; i++) {
-				var white = Math.random() * 2 - 1;
-				b0 = 0.99886 * b0 + white * 0.0555179;
-				b1 = 0.99332 * b1 + white * 0.0750759;
-				b2 = 0.96900 * b2 + white * 0.1538520;
-				b3 = 0.86650 * b3 + white * 0.3104856;
-				b4 = 0.55000 * b4 + white * 0.5329522;
-				b5 = -0.7616 * b5 - white * 0.0168980;
-				output[i] = b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362;
-				output[i] *= 0.11; // (roughly) compensate for gain
-				b6 = white * 0.115926;
-			}
+		else {
+			// Non-iOS
+			whiteNoiseNode.start(audioContext.currentTime);
 		}
-		return node;
-	};
-
-	AudioContext.prototype.createBrownNoise = function(bufferSize) {
-		bufferSize = bufferSize || 4096;
-		var lastOut = 0.0;
-		var node = this.createScriptProcessor(bufferSize, 1, 1);
-		node.onaudioprocess = function(e) {
-			var output = e.outputBuffer.getChannelData(0);
-			for (var i = 0; i < bufferSize; i++) {
-				var white = Math.random() * 2 - 1;
-				output[i] = (lastOut + (0.02 * white)) / 1.02;
-				lastOut = output[i];
-				output[i] *= 3.5; // (roughly) compensate for gain
-			}
+	}
+	else {
+		// If connected
+		if (iOS) {
+			whiteNoiseNode.stop(0);
 		}
-		return node;
-	};
-})(window.AudioContext || window.webkitAudioContext);
-
-var context = new webkitAudioContext();
-var brown_noise = context.createBrownNoise();
-var pink_noise = context.createPinkNoise();
-var white_noise = context.createWhiteNoise();
-white_noise.connect(context.destination);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* var audioContext = new (window.webkitAudioContext || window.AudioContext)();
-    
-var whiteNoise = audioContext.createWhiteNoise();
-var whiteGain = audioContext.createGain();
-whiteGain.gain.value = 0;
-whiteNoise.connect(whiteGain);
-whiteGain.connect(audioContext.destination);
-
-var pinkNoise = audioContext.createPinkNoise();
-var pinkGain = audioContext.createGain();
-pinkGain.gain.value = 0;
-pinkNoise.connect(pinkGain);
-pinkGain.connect(audioContext.destination);
-
-var brownNoise = audioContext.createBrownNoise();
-var brownGain = audioContext.createGain();
-brownGain.gain.value = 0;
-brownNoise.connect(brownGain);
-brownGain.connect(audioContext.destination);
-
-var toggleDemo = function(text, gain) {
-    var handler = function(e) {
-        if (gain.gain.value == 0.0) {
-            $(e.target).text("Stop");
-            gain.gain.value = 0.3;
-        } else {
-            $(e.target).text(text);
-            gain.gain.value = 0.0;
-        }
-    };
-    return handler;
+		else {
+			// Non-iOS Sound off
+			whiteNoiseNode.stop(0);
+			whiteNoiseNode.disconnect();
+			window.location = 'http://127.0.0.1:8881/therapy.html'; // testing
+			//window.location = 'https://www.tafhub.com/labs/stoptinnitus/therapy/'; //production
+		}
+	}
+	connected = !connected;
 };
 
-$("#white-demo").click(toggleDemo("White Noise", whiteGain));
-$("#pink-demo").click(toggleDemo("Pink Noise", pinkGain));
-$("#brown-demo").click(toggleDemo("Brown Noise", brownGain));
+// *** //NOISE GENERATOR SCRIPT ***
 
-// *** DEFAULT SOUNDS SCRIPT ***
-(function(AudioContext) {
-	AudioContext.prototype.createWhiteNoise = function(bufferSize) {
-		bufferSize = bufferSize || 4096;
-		var node = this.createScriptProcessor(bufferSize, 1, 1);
-		node.onaudioprocess = function(e) {
-			var output = e.outputBuffer.getChannelData(0);
-			for (var i = 0; i < bufferSize; i++) {
-				output[i] = Math.random() * 2 - 1;
-			}
+// *** iOS CHECK SCRIPT ***
+var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+if (isSafari && iOS) {
+	alert("You are using Safari on iOS! The feature of listening to your music in parallel with the generated sound is not allowed in this browser. Please use Chrome.");
+}
+// *** //iOS CHECK SCRIPT ***
+
+// *** iOS CHECK TOUCH SCRIPT ***
+function webAudioTouchUnlock(context) {
+	return new Promise(function (resolve, reject) {
+		if (context.state === 'suspended' && 'ontouchstart' in window) {
+			var unlock = function () {
+				context.resume().then(function () {
+					document.body.removeEventListener('touchstart', unlock);
+					document.body.removeEventListener('touchend', unlock);
+
+					resolve(true);
+				},
+					function (reason) {
+						reject(reason);
+					});
+			};
+
+			document.body.addEventListener('touchstart', unlock, false);
+			document.body.addEventListener('touchend', unlock, false);
 		}
-		return node;
-	};
-
-	AudioContext.prototype.createPinkNoise = function(bufferSize) {
-		bufferSize = bufferSize || 4096;
-		var b0, b1, b2, b3, b4, b5, b6;
-		b0 = b1 = b2 = b3 = b4 = b5 = b6 = 0.0;
-		var node = this.createScriptProcessor(bufferSize, 1, 1);
-		node.onaudioprocess = function(e) {
-			var output = e.outputBuffer.getChannelData(0);
-			for (var i = 0; i < bufferSize; i++) {
-				var white = Math.random() * 2 - 1;
-				b0 = 0.99886 * b0 + white * 0.0555179;
-				b1 = 0.99332 * b1 + white * 0.0750759;
-				b2 = 0.96900 * b2 + white * 0.1538520;
-				b3 = 0.86650 * b3 + white * 0.3104856;
-				b4 = 0.55000 * b4 + white * 0.5329522;
-				b5 = -0.7616 * b5 - white * 0.0168980;
-				output[i] = b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362;
-				output[i] *= 0.11; // (roughly) compensate for gain
-				b6 = white * 0.115926;
-			}
+		else {
+			resolve(false);
 		}
-		return node;
-	};
-
-	AudioContext.prototype.createBrownNoise = function(bufferSize) {
-		bufferSize = bufferSize || 4096;
-		var lastOut = 0.0;
-		var node = this.createScriptProcessor(bufferSize, 1, 1);
-		node.onaudioprocess = function(e) {
-			var output = e.outputBuffer.getChannelData(0);
-			for (var i = 0; i < bufferSize; i++) {
-				var white = Math.random() * 2 - 1;
-				output[i] = (lastOut + (0.02 * white)) / 1.02;
-				lastOut = output[i];
-				output[i] *= 3.5; // (roughly) compensate for gain
-			}
-		}
-		return node;
-	};
-})(window.AudioContext || window.webkitAudioContext);
-
-
-// *** FREQUENCY SCRIPT ***
-var whitenoise = function () {
-  var context = new webkitAudioContext();
-  var whiteNoise = context.createWhiteNoise();
-  whiteNoise.connect(context.destination);
-} */
+	});
+}
+// *** //iOS CHECK TOUCH SCRIPT ***
