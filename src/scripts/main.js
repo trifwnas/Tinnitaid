@@ -29,6 +29,21 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
 ************************************************************************
  */
 
+// *** SERVICE WORKER REGISTRATION AND SCOPE ***
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/sw.js", {
+      scope: "/labs/stoptinnitus/"
+    })
+    .then(function(registration) {
+      console.log("Registration successful, scope is:", registration.scope);
+    })
+    .catch(function(error) {
+      console.log("Service worker registration failed, error:", error);
+    });
+}
+// *** //SERVICE WORKER REGISTRATION AND SCOPE ***
+
 // *** SLIDE SHOW VALUE SCRIPT ***
 var slider = document.getElementById("freqRange");
 var output = document.getElementById("demo");
