@@ -29,25 +29,6 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
 ************************************************************************
  */
 
-/* // *** SERVICE WORKER REGISTRATION AND SCOPE ***
-if (navigator.serviceWorker.controller) {
-  console.log("Service Worker is registered");
-} else {
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker
-      .register("sw.js", {
-        scope: "/labs/stoptinnitus/"
-      })
-      .then(function(registration) {
-        console.log("Registration successful, scope is:", registration.scope);
-      })
-      .catch(function(error) {
-        console.log("Service worker registration failed, error:", error);
-      });
-  }
-}
-// *** //SERVICE WORKER REGISTRATION AND SCOPE *** */
-
 // *** SLIDE SHOW VALUE SCRIPT ***
 var slider = document.getElementById("freqRange");
 var output = document.getElementById("demo");
@@ -77,7 +58,6 @@ function webAudioTouchUnlock(context) {
           function() {
             document.body.removeEventListener("touchstart", unlock);
             document.body.removeEventListener("touchend", unlock);
-
             resolve(true);
           },
           function(reason) {
@@ -85,7 +65,6 @@ function webAudioTouchUnlock(context) {
           }
         );
       };
-
       document.body.addEventListener("touchstart", unlock, false);
       document.body.addEventListener("touchend", unlock, false);
     } else {

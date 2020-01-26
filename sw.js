@@ -3,9 +3,12 @@
 var cacheName = "stopTinnitusPrecache";
 var precacheFiles = [
   /* Array of files to precache */
+  "/labs/stoptinnitus/",
   "/labs/stoptinnitus/index.html",
   "/labs/stoptinnitus/detect.html",
-  "/labs/stoptinnitus/therapy.html"
+  "/labs/stoptinnitus/therapy.html",
+  "/labs/stoptinnitus/src/",
+  "/labs/stoptinnitus/src/scripts/main.js"
 ];
 
 //Install stage sets up the cache-array to configure pre-cache content
@@ -25,10 +28,19 @@ self.addEventListener("activate", function(event) {
   return self.clients.claim();
 });
 
-self.addEventListener("fetch", function(event) {
+/* self.addEventListener("fetch", function(event) {
   console.log("The service worker is serving the asset." + event.request.url);
   event.respondWith(fromCache(event.request).catch(fromServer(event.request)));
   event.waitUntil(update(event.request));
+}); */
+
+self.addEventListener("fetch", function(event) {
+  console.log("The service worker is serving the asset." + event.request.url);
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      return response || fetch(event.request);
+    })
+  );
 });
 
 function precache() {
