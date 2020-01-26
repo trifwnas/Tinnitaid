@@ -67,9 +67,7 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
 
   <!-- Scripts -->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <script async custom-element="amp-install-serviceworker"
-    src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js">
-    </script>
+  <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>    
   <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
   <!-- Google Analytics -->
   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -329,19 +327,19 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
   </header>
   <ul class="card">
     <li class="card_item">
-      <h2>Tinnitus therapy, made simple.</h2>
-      <p>Our science-first solution makes it possible to get your Tinnitus treatment sessions while listening to your own music or podcast!</p>
-      <p>Just set this app and then jump to your favorite music or podcast app!</p>
+      <h2>Tinnitus relief, made simple.</h2>
+<!--       <p>Our science-first solution makes it possible to get your Tinnitus treatment sessions while listening to your own music or podcast!</p>
+      <p>Just set this app and then jump to your favorite music or podcast app!</p> -->
     </li>
     <li class="card_item">
       <h3>Detection</h3>
-      <p>Use our detection tool to identify the tinnitus sound you hear.</p>
+      <p>Use the detection tool to identify the frequency of the sound you are hearing.</p>
       <a href="detect.html" class="button">Detect</a>
     </li>
     <li class="card_item">
-      <h3>Therapy</h3>
-      <p>Use our noise generator tool to get your tinnitus retraining therapy on-the-go!</p>
-      <a href="therapy.html" class="button">Solve</a>
+      <h3>Relief</h3>
+      <p>Use the noise generation tool to get your relief on-the-go!</p>
+      <a href="therapy.html" class="button">Use</a>
     </li>
     <li class="card_item">
       <h3>Give Feedback</h3>
@@ -375,8 +373,7 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
       <p>By using the app you agree to the above statement.</p>
     </li>
   </ul>
-  <amp-install-serviceworker src="sw.js" layout="nodisplay" data-iframe-src="install-service-worker.html">
-  </amp-install-serviceworker>
+  <amp-install-serviceworker src="./sw.js" data-iframe-src="install-service-worker.html" layout="nodisplay" >  </amp-install-serviceworker>
 </body>
 
 </html>
