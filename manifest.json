@@ -3,7 +3,7 @@
   "short_name": "StopTinnitus",
   "description": "An app to help tinnitus patients.",
   "theme_color": "#1976D2",
-  "background_color": "#00796b",
+  "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/labs/stoptinnitus/",
   "start_url": "/labs/stoptinnitus/index.html",

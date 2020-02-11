@@ -300,9 +300,9 @@ var playStopWhiteNoise = function() {
             whiteNoiseNode.start(context.currentTime);
           } else {
             alert("Restart is needed");
-            window.location = 'http://127.0.0.1:8881/therapy.html'; // testing
+            // window.location = 'http://127.0.0.1:8881/therapy.html'; // testing
             window.location =
-              // "https://www.tafhub.com/labs/stoptinnitus/therapy.html";
+              "https://www.tafhub.com/labs/stoptinnitus/therapy.html";
           }
         },
         function(reason) {
@@ -321,8 +321,8 @@ var playStopWhiteNoise = function() {
       // Non-iOS Sound off
       whiteNoiseNode.stop(0);
       whiteNoiseNode.disconnect();
-      window.location = 'http://127.0.0.1:8881/therapy.html'; // testing
-      // window.location = "https://www.tafhub.com/labs/stoptinnitus/therapy.html"; //production
+      // window.location = 'http://127.0.0.1:8881/therapy.html'; // testing
+      window.location = "https://www.tafhub.com/labs/stoptinnitus/therapy.html"; //production
     }
     gainNode.disconnect();
   }
