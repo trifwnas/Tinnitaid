@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "http-server": "0.10.0",
+    "http-server": "^0.12.3",
     "workbox-cli": "^3.4.1"
   }
 }
