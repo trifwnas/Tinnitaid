@@ -7,7 +7,7 @@ Developed by Tryfon Tzanetis
 	     	 (__)
 
 ************************************************************************          
-StopTinnitus app intends to help tinninuts patient get rid of the noise. Please consult a doctor before using the app.
+Tinnitaid app intends to help tinnitus patient get rid of the noise. Please consult a doctor before using the app.
 The creating team of the app does not hold any responsibility on how the app is used. By using the app you accept this policy statement.
 
     Copyright (C) 2019 Tryfon Tzanetis
@@ -55,7 +55,7 @@ var gainNode = context.createGain();
 gainNode.gain.value = 0.2; // 20 %
 gainNode.connect(context.destination);
 
-var playStopWhiteNoise = function() {
+var playStopWhiteNoise = function () {
   if (!connected) {
     whiteNoiseNode.connect(gainNode);
 
@@ -64,7 +64,7 @@ var playStopWhiteNoise = function() {
         "Sound started. Un-mute your device or select volume if you cannot hear anything."
       );
       webAudioTouchUnlock(context).then(
-        function(unlocked) {
+        function (unlocked) {
           if (unlocked) {
             // AudioContext was unlocked from an explicit user action,
             // sound should start playing now
@@ -72,10 +72,11 @@ var playStopWhiteNoise = function() {
           } else {
             alert("Restart is needed");
             // window.location = 'http://127.0.0.1:8881/therapy.html'; // testing
-            window.location = "https://www.tafhub.com/labs/stoptinnitus/therapy.html";
+            window.location =
+              "https://www.tafhub.com/labs/stoptinnitus/therapy.html";
           }
         },
-        function(reason) {
+        function (reason) {
           console.error(reason);
         }
       );
@@ -114,17 +115,17 @@ if (isSafari && iOS) {
 
 // *** iOS CHECK TOUCH SCRIPT ***
 function webAudioTouchUnlock(context) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     if (context.state === "suspended" && "ontouchstart" in window) {
-      var unlock = function() {
+      var unlock = function () {
         context.resume().then(
-          function() {
+          function () {
             document.body.removeEventListener("touchstart", unlock);
             document.body.removeEventListener("touchend", unlock);
 
             resolve(true);
           },
-          function(reason) {
+          function (reason) {
             reject(reason);
           }
         );
@@ -140,7 +141,7 @@ function webAudioTouchUnlock(context) {
 // *** //iOS CHECK TOUCH SCRIPT ***
 
 // *** VOLUME SCRIPT ***
-var setWhiteNoiseVolume = function() {
+var setWhiteNoiseVolume = function () {
   var vol = document.getElementById("whiteNoiseVolRange").value;
   gainNode.gain.value = vol;
 };

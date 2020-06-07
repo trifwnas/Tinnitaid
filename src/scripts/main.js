@@ -7,7 +7,7 @@ Developed by Tryfon Tzanetis
 	     	 (__)
 
 ************************************************************************          
-StopTinnitus app intends to help tinninuts patient get rid of the noise. Please consult a doctor before using the app.
+Tinnitaid app intends to help tinnitus patient get rid of the noise. Please consult a doctor before using the app.
 The creating team of the app does not hold any responsibility on how the app is used. By using the app you accept this policy statement.
 
     Copyright (C) 2019 Tryfon Tzanetis
@@ -33,7 +33,7 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
 var slider = document.getElementById("freqRange");
 var output = document.getElementById("demo");
 output.innerHTML = slider.value;
-slider.oninput = function() {
+slider.oninput = function () {
   output.innerHTML = this.value;
 };
 // *** //SLIDE SHOW VALUE SCRIPT ***
@@ -51,16 +51,16 @@ if (isSafari && iOS) {
 
 // *** iOS CHECK TOUCH SCRIPT ***
 function webAudioTouchUnlock(context) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     if (context.state === "suspended" && "ontouchstart" in window) {
-      var unlock = function() {
+      var unlock = function () {
         context.resume().then(
-          function() {
+          function () {
             document.body.removeEventListener("touchstart", unlock);
             document.body.removeEventListener("touchend", unlock);
             resolve(true);
           },
-          function(reason) {
+          function (reason) {
             reject(reason);
           }
         );
@@ -93,7 +93,7 @@ oscillator.frequency.value = 1000;
 var connected = false;
 gainNode.gain.value = 0.2;
 
-var playpause = function() {
+var playpause = function () {
   if (!connected) {
     gainNode.connect(context.destination);
 
@@ -102,7 +102,7 @@ var playpause = function() {
         "Sound started. Un-mute your device or select volume if you cannot hear anything."
       );
       webAudioTouchUnlock(context).then(
-        function(unlocked) {
+        function (unlocked) {
           if (unlocked) {
             // AudioContext was unlocked from an explicit user action,
             // sound should start playing now
@@ -117,7 +117,7 @@ var playpause = function() {
             //oscillator.start(0);
           }
         },
-        function(reason) {
+        function (reason) {
           console.error(reason);
         }
       );
@@ -140,14 +140,14 @@ var playpause = function() {
 // *** //MUSIC PLAYER SCRIPT ***
 
 // *** VOLUME SCRIPT ***
-var setVolume = function() {
+var setVolume = function () {
   var vol = document.getElementById("volRange").value;
   gainNode.gain.value = vol;
 };
 // *** //VOLUME SCRIPT ***
 
 // *** FREQUENCY SCRIPT ***
-var setFrequency = function() {
+var setFrequency = function () {
   var input = document.getElementById("input");
   oscillator.frequency.value = +input.value;
   var freq = document.getElementById("input").value;
@@ -158,7 +158,7 @@ var setFrequency = function() {
 // *** //FREQUENCY SCRIPT ***
 
 // *** FREQUENCY SLIDER SCRIPT ***
-var setFrequencySlider = function() {
+var setFrequencySlider = function () {
   var input = document.getElementById("freqRange");
   oscillator.frequency.value = +input.value;
   var freq = document.getElementById("freqRange").value;

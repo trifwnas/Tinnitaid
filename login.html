@@ -7,7 +7,7 @@ Developed by Tryfon Tzanetis
 	     	 (__)
 
 ************************************************************************          
-StopTinnitus app intends to help tinninuts patient get rid of the noise. Please consult a doctor before using the app.
+Tinnitaid app intends to help tinnitus patient get rid of the noise. Please consult a doctor before using the app.
 The creating team of the app does not hold any responsibility on how the app is used. By using the app you accept this policy statement.
 
     Copyright (C) 2019 Tryfon Tzanetis
@@ -30,443 +30,388 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
 -->
 <!DOCTYPE html>
 <html ⚡ lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Stop Tinnitus</title>
-    <meta name="theme-color" content="#1976D2" />
-    <link rel="canonical" href="https://tafhub.com/labs/stoptinnitus/" />
-    <link rel="manifest" href="manifest.json" />
 
-    <!-- Seo Tags -->
-    <meta name="description" content="Stop Tinnitus" />
-    <meta name="keywords" content="Stop, Tinnitus, treatment, patient" />
-    <meta name="author" content="Tryfon Tzanetis" />
-    <meta
-      name="viewport"
-      content="width=device-width,minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=0"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tafhub.com/labs/stoptinnitus/" />
-    <meta property="og:site_name" content="Stop Tinnitus" />
-    <meta
-      property="og:image"
-      itemprop="image primaryImageOfPage"
-      content="img/favicon/android-chrome-192x192.png"
-    />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:domain" content="Stop Tinnitus" />
-    <meta
-      name="twitter:title"
-      property="og:title"
-      itemprop="name"
-      content="Stop Tinnitus"
-    />
-    <!-- /Seo Tags -->
+<head>
+  <meta charset="utf-8" />
+  <title>Tinnitaid</title>
+  <meta name="theme-color" content="#1976D2" />
+  <link rel="canonical" href="https://tafhub.com/labs/stoptinnitus/" />
+  <link rel="manifest" href="manifest.json" />
 
-    <!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="src/img/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="src/img/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="194x194"
-      href="src/img/favicon/favicon-194x194.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="src/img/favicon/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="src/img/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="src/img/favicon/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="src/img/favicon/safari-pinned-tab.svg"
-      color="#5bbad5"
-    />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta
-      name="msapplication-TileImage"
-      content="img/favicon/mstile-144x144.png"
-    />
-    <meta name="theme-color" content="#ffffff" />
-    <!-- /Favicon -->
+  <!-- Seo Tags -->
+  <meta name="description" content="Tinnitaid" />
+  <meta name="keywords" content="Stop, Tinnitus, treatment, patient" />
+  <meta name="author" content="Tryfon Tzanetis" />
+  <meta name="viewport"
+    content="width=device-width,minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tafhub.com/labs/stoptinnitus/" />
+  <meta property="og:site_name" content="Tinnitaid" />
+  <meta property="og:image" itemprop="image primaryImageOfPage" content="img/favicon/android-chrome-192x192.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:domain" content="Tinnitaid" />
+  <meta name="twitter:title" property="og:title" itemprop="name" content="Tinnitaid" />
+  <!-- /Seo Tags -->
 
-    <!-- Scripts -->
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script
-      async
-      custom-element="amp-install-serviceworker"
-      src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"
-    ></script>
-    <script
-      async
-      custom-element="amp-form"
-      src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
-    ></script>
-    <!-- Google Analytics -->
-    <script
-      async
-      custom-element="amp-analytics"
-      src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
-    ></script>
-    <!-- /Google Analytics -->
-    <!-- /Scripts -->
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="src/img/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="194x194" href="src/img/favicon/favicon-194x194.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="src/img/favicon/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="src/img/favicon/site.webmanifest" />
+  <link rel="mask-icon" href="src/img/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png" />
+  <meta name="theme-color" content="#ffffff" />
+  <!-- /Favicon -->
 
-    <!-- Font -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Jura"
-      rel="stylesheet"
-    />
-    <!-- /Font -->
+  <!-- Scripts -->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-install-serviceworker"
+    src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <!-- Google Analytics -->
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <!-- /Google Analytics -->
+  <!-- /Scripts -->
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <!-- /Font Awesome -->
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet" />
+  <!-- /Font -->
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <!-- /Font Awesome -->
+
+  <style amp-boilerplate="">
+    body {
+      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    }
+
+    @-webkit-keyframes -amp-start {
+      from {
+        visibility: hidden;
+      }
+
+      to {
+        visibility: visible;
+      }
+    }
+
+    @-moz-keyframes -amp-start {
+      from {
+        visibility: hidden;
+      }
+
+      to {
+        visibility: visible;
+      }
+    }
+
+    @-ms-keyframes -amp-start {
+      from {
+        visibility: hidden;
+      }
+
+      to {
+        visibility: visible;
+      }
+    }
+
+    @-o-keyframes -amp-start {
+      from {
+        visibility: hidden;
+      }
+
+      to {
+        visibility: visible;
+      }
+    }
+
+    @keyframes -amp-start {
+      from {
+        visibility: hidden;
+      }
+
+      to {
+        visibility: visible;
+      }
+    }
+  </style>
+  <noscript>
     <style amp-boilerplate="">
       body {
-        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      }
-
-      @-webkit-keyframes -amp-start {
-        from {
-          visibility: hidden;
-        }
-
-        to {
-          visibility: visible;
-        }
-      }
-
-      @-moz-keyframes -amp-start {
-        from {
-          visibility: hidden;
-        }
-
-        to {
-          visibility: visible;
-        }
-      }
-
-      @-ms-keyframes -amp-start {
-        from {
-          visibility: hidden;
-        }
-
-        to {
-          visibility: visible;
-        }
-      }
-
-      @-o-keyframes -amp-start {
-        from {
-          visibility: hidden;
-        }
-
-        to {
-          visibility: visible;
-        }
-      }
-
-      @keyframes -amp-start {
-        from {
-          visibility: hidden;
-        }
-
-        to {
-          visibility: visible;
-        }
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        animation: none;
       }
     </style>
-    <noscript>
-      <style amp-boilerplate="">
-        body {
-          -webkit-animation: none;
-          -moz-animation: none;
-          -ms-animation: none;
-          animation: none;
-        }
-      </style>
-    </noscript>
+  </noscript>
 
-    <style amp-custom>
-      body {
-        margin: 0;
-        height: 100%;
-        font-family: "Jura", sans-serif;
-        background-color: #f5f5f5;
-        text-align: center;
-      }
+  <style amp-custom>
+    body {
+      margin: 0;
+      height: 100%;
+      font-family: "Jura", sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
 
-      a {
-        text-decoration: none;
-        color: black;
-      }
+    a {
+      text-decoration: none;
+      color: black;
+    }
 
-      h1 {
-        font-size: 24px;
-      }
+    h1 {
+      font-size: 24px;
+    }
 
-      h2 {
-        font-size: 30px;
-        margin: 25px;
-        padding-top: 25px;
-        text-align: center;
-      }
+    h2 {
+      font-size: 30px;
+      margin: 25px;
+      padding-top: 25px;
+      text-align: center;
+    }
 
-      h3 {
-        font-size: 25px;
-        padding-top: 25px;
-      }
+    h3 {
+      font-size: 25px;
+      padding-top: 25px;
+    }
 
-      p {
-        font-size: 15px;
-      }
+    p {
+      font-size: 15px;
+    }
 
-      .card {
-        display: block;
-        list-style-type: none;
-        padding: 0;
-      }
+    .card {
+      display: block;
+      list-style-type: none;
+      padding: 0;
+    }
 
-      .card_item {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 600px;
-        padding-bottom: 25px;
-        border-radius: 4px;
-        background-color: #ffffff;
-        text-align: center;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      }
+    .card_item {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 600px;
+      padding-bottom: 25px;
+      border-radius: 4px;
+      background-color: #ffffff;
+      text-align: center;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
 
-      .card_item:first-child {
+    .card_item:first-child {
+      margin-top: 0;
+    }
+
+    .card_item_img {
+      display: inline;
+      margin: 8px;
+    }
+
+    .card_item h2 {
+      padding-top: 25px;
+    }
+
+    .item {
+      margin: 8px 16px;
+    }
+
+    .related h2 {
+      margin: 8px 16px;
+    }
+
+    .button {
+      border-radius: 25px;
+      color: white;
+      font-weight: bold;
+      background-color: #1976d2;
+      box-shadow: 0px 2px 5px #999999;
+      border: none;
+      padding: 14px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .button:hover,
+    .overlay button:focus {
+      box-shadow: 0px 2px 15px #999999;
+    }
+
+    .header {
+      color: white;
+      background: #1976d2;
+      padding: 8px 16px;
+      box-shadow: 0px 2px 5px #999999;
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header h1 {
+      margin: 0 8px 0 0;
+    }
+
+    .header amp-img {
+      margin-right: 8px;
+    }
+
+    .header a {
+      color: white;
+    }
+
+    .header a:visited {
+      color: white;
+    }
+
+    .splash {
+      width: 100%;
+      height: 100%;
+      padding: 1%;
+      color: #f1f1f1;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.9);
+      text-align: center;
+      font-size: 36px;
+    }
+
+    /* style the container */
+    .container {
+      position: relative;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px 0 30px 0;
+    }
+
+    /* style inputs and link buttons */
+    input,
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      margin: 5px 0;
+      opacity: 0.85;
+      display: inline-block;
+      font-size: 17px;
+      line-height: 20px;
+      text-decoration: none;
+      /* remove underline from anchors */
+    }
+
+    input:hover,
+    .btn:hover {
+      opacity: 1;
+    }
+
+    /* add appropriate colors to fb, twitter and google buttons */
+    .fb {
+      background-color: #3b5998;
+      color: white;
+    }
+
+    .twitter {
+      background-color: #55acee;
+      color: white;
+    }
+
+    .google {
+      background-color: #dd4b39;
+      color: white;
+    }
+
+    /* style the submit button */
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    /* Two-column layout */
+    .col {
+      float: left;
+      width: 50%;
+      margin: auto;
+      padding: 0 50px;
+      margin-top: 6px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* vertical line */
+    .vl {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      border: 2px solid #ddd;
+      height: 175px;
+    }
+
+    /* text inside the vertical line */
+    .vl-innertext {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      padding: 8px 10px;
+    }
+
+    /* hide some text on medium and large screens */
+    .hide-md-lg {
+      display: none;
+    }
+
+    /* bottom container */
+    .bottom-container {
+      text-align: center;
+      background-color: #666;
+      border-radius: 0px 0px 4px 4px;
+    }
+
+    /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 650px) {
+      .col {
+        width: 100%;
         margin-top: 0;
       }
 
-      .card_item_img {
-        display: inline;
-        margin: 8px;
-      }
-
-      .card_item h2 {
-        padding-top: 25px;
-      }
-
-      .item {
-        margin: 8px 16px;
-      }
-
-      .related h2 {
-        margin: 8px 16px;
-      }
-
-      .button {
-        border-radius: 25px;
-        color: white;
-        font-weight: bold;
-        background-color: #1976d2;
-        box-shadow: 0px 2px 5px #999999;
-        border: none;
-        padding: 14px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-
-      .button:hover,
-      .overlay button:focus {
-        box-shadow: 0px 2px 15px #999999;
-      }
-
-      .header {
-        color: white;
-        background: #1976d2;
-        padding: 8px 16px;
-        box-shadow: 0px 2px 5px #999999;
-        height: 40px;
-        display: flex;
-        align-items: center;
-      }
-
-      .header h1 {
-        margin: 0 8px 0 0;
-      }
-
-      .header amp-img {
-        margin-right: 8px;
-      }
-
-      .header a {
-        color: white;
-      }
-
-      .header a:visited {
-        color: white;
-      }
-
-      .splash {
-        width: 100%;
-        height: 100%;
-        padding: 1%;
-        color: #f1f1f1;
-        background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.9);
-        text-align: center;
-        font-size: 36px;
-      }
-
-      /* style the container */
-      .container {
-        position: relative;
-        border-radius: 5px;
-        background-color: #f2f2f2;
-        padding: 20px 0 30px 0;
-      }
-
-      /* style inputs and link buttons */
-      input,
-      .btn {
-        width: 100%;
-        padding: 12px;
-        border: none;
-        border-radius: 4px;
-        margin: 5px 0;
-        opacity: 0.85;
-        display: inline-block;
-        font-size: 17px;
-        line-height: 20px;
-        text-decoration: none; /* remove underline from anchors */
-      }
-
-      input:hover,
-      .btn:hover {
-        opacity: 1;
-      }
-
-      /* add appropriate colors to fb, twitter and google buttons */
-      .fb {
-        background-color: #3b5998;
-        color: white;
-      }
-
-      .twitter {
-        background-color: #55acee;
-        color: white;
-      }
-
-      .google {
-        background-color: #dd4b39;
-        color: white;
-      }
-
-      /* style the submit button */
-      input[type="submit"] {
-        background-color: #4caf50;
-        color: white;
-        cursor: pointer;
-      }
-
-      input[type="submit"]:hover {
-        background-color: #45a049;
-      }
-
-      /* Two-column layout */
-      .col {
-        float: left;
-        width: 50%;
-        margin: auto;
-        padding: 0 50px;
-        margin-top: 6px;
-      }
-
-      /* Clear floats after the columns */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      /* vertical line */
+      /* hide the vertical line */
       .vl {
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%);
-        border: 2px solid #ddd;
-        height: 175px;
-      }
-
-      /* text inside the vertical line */
-      .vl-innertext {
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #f1f1f1;
-        border: 1px solid #ccc;
-        border-radius: 50%;
-        padding: 8px 10px;
-      }
-
-      /* hide some text on medium and large screens */
-      .hide-md-lg {
         display: none;
       }
 
-      /* bottom container */
-      .bottom-container {
+      /* show the hidden text on small screens */
+      .hide-md-lg {
+        display: block;
         text-align: center;
-        background-color: #666;
-        border-radius: 0px 0px 4px 4px;
       }
+    }
+  </style>
+</head>
 
-      /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
-      @media screen and (max-width: 650px) {
-        .col {
-          width: 100%;
-          margin-top: 0;
-        }
-        /* hide the vertical line */
-        .vl {
-          display: none;
-        }
-        /* show the hidden text on small screens */
-        .hide-md-lg {
-          display: block;
-          text-align: center;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Google Analytics -->
-    <amp-analytics type="googleanalytics" id="analytics-ga">
-      <script type="application/json">
+<body>
+  <!-- Google Analytics -->
+  <amp-analytics type="googleanalytics" id="analytics-ga">
+    <script type="application/json">
         {
           "vars": {
             "account": "UA-46431000-18"
@@ -509,84 +454,69 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
           }
         }
       </script>
-    </amp-analytics>
-    <!-- /Google Analytics -->
+  </amp-analytics>
+  <!-- /Google Analytics -->
 
-    <header class="header">
-      <amp-img
-        src="src/img/stoptinnitus_logo.svg"
-        alt="stoptinnitus_logo"
-        width="36"
-        height="36"
-      ></amp-img>
-      <h1><a href="index.html">Stop Tinnitus</a></h1>
-    </header>
-    <ul class="card">
-      <li class="card_item">
-        <div class="container">
-          <form action="/action_page.php">
-            <div class="row">
-              <h2 style="text-align:center">
-                Login with Social Media or Manually
-              </h2>
-              <div class="vl">
-                <span class="vl-innertext">or</span>
-              </div>
-
-              <div class="col">
-                <a href="#" class="fb btn">
-                  <i class="fa fa-facebook fa-fw"></i> Login with Facebook
-                </a>
-                <a href="#" class="twitter btn">
-                  <i class="fa fa-twitter fa-fw"></i> Login with Twitter
-                </a>
-                <a href="#" class="google btn"
-                  ><i class="fa fa-google fa-fw"> </i> Login with Google+
-                </a>
-              </div>
-
-              <div class="col">
-                <div class="hide-md-lg">
-                  <p>Or sign in manually:</p>
-                </div>
-
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="Username"
-                  required
-                />
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  required
-                />
-                <input type="submit" value="Login" />
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="bottom-container">
+  <header class="header">
+    <amp-img src="src/img/stoptinnitus_logo.svg" alt="Tinnitaid_logo" width="36" height="36"></amp-img>
+    <h1><a href="index.html">Tinnitaid</a></h1>
+  </header>
+  <ul class="card">
+    <li class="card_item">
+      <div class="container">
+        <form action="/action_page.php">
           <div class="row">
-            <div class="col">
-              <a href="#" style="color:white" class="btn">Sign up</a>
+            <h2 style="text-align:center">
+              Login with Social Media or Manually
+            </h2>
+            <div class="vl">
+              <span class="vl-innertext">or</span>
             </div>
+
             <div class="col">
-              <a href="#" style="color:white" class="btn">Forgot password?</a>
+              <a href="#" class="fb btn">
+                <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+              </a>
+              <a href="#" class="twitter btn">
+                <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+              </a>
+              <a href="#" class="google btn"><i class="fa fa-google fa-fw"> </i> Login with Google+
+              </a>
+            </div>
+
+            <div class="col">
+              <div class="hide-md-lg">
+                <p>Or sign in manually:</p>
+              </div>
+
+              <input type="text" name="username" placeholder="Username" required />
+              <input type="password" name="password" placeholder="Password" required />
+              <input type="submit" value="Login" />
             </div>
           </div>
+        </form>
+      </div>
+
+      <div class="bottom-container">
+        <div class="row">
+          <div class="col">
+            <a href="#" style="color:white" class="btn">Sign up</a>
+          </div>
+          <div class="col">
+            <a href="#" style="color:white" class="btn">Forgot password?</a>
+          </div>
         </div>
-      </li>
-      <li class="card_item">
-        <h3>GDPR</h3>
-        <p>
-          We use Google Analytics to track the usage of the app. Please be aware
-          of their compliance with GDPR before using the app.
-        </p>
-        <p>By using the app you agree to the above statement.</p>
-      </li>
-    </ul>
-  </body>
+      </div>
+    </li>
+    <li class="card_item">
+      <h3>GDPR</h3>
+      <p>
+        We use Google Analytics to track the usage of the app. Please be aware
+        of their compliance with GDPR before using the app.
+      </p>
+      <p>By using the app you agree to the above statement.</p>
+    </li>
+  </ul>
+</body>
+
 </html>

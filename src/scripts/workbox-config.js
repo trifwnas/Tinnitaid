@@ -7,7 +7,7 @@ Developed by Tryfon Tzanetis
 	     	 (__)
 
 ************************************************************************          
-StopTinnitus app intends to help tinninuts patient get rid of the noise. Please consult a doctor before using the app.
+Tinnitaid app intends to help tinnitus patient get rid of the noise. Please consult a doctor before using the app.
 The creating team of the app does not hold any responsibility on how the app is used. By using the app you accept this policy statement.
 
     Copyright (C) 2019 Tryfon Tzanetis
@@ -30,15 +30,9 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
 */
 
 module.exports = {
-  "globDirectory": "https://tafhub.com/labs/stoptinnitus/",
-  "globPatterns": [
-    "img/**.*",
-    "offline.html",
-    "icons/**.*"
-  ],
-  "swSrc": "/labs/stoptinnitus/sw.js",
-  "swDest": "/labs/stoptinnitus/sw.js",
-  "globIgnores": [
-    "./workbox-cli-config.js"
-  ]
+  globDirectory: "https://tafhub.com/labs/stoptinnitus/",
+  globPatterns: ["img/**.*", "offline.html", "icons/**.*"],
+  swSrc: "/labs/stoptinnitus/sw.js",
+  swDest: "/labs/stoptinnitus/sw.js",
+  globIgnores: ["./workbox-cli-config.js"],
 };

@@ -7,7 +7,7 @@ Developed by Tryfon Tzanetis
 	     	 (__)
 
 ************************************************************************          
-StopTinnitus app intends to help tinninuts patient get rid of the noise. Please consult a doctor before using the app.
+Tinnitaid app intends to help tinnitus patient get rid of the noise. Please consult a doctor before using the app.
 The creating team of the app does not hold any responsibility on how the app is used. By using the app you accept this policy statement.
 
     Copyright (C) 2019 Tryfon Tzanetis
@@ -30,28 +30,31 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
 -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Installing the Cache-first network service worker</title>
-    <script type="text/javascript">
-      if (navigator.serviceWorker.controller) {
-        console.log("Service Worker is registered");
-      } else {
-        //Register the ServiceWorker
-        navigator.serviceWorker
-          .register("./sw.js", {
-            scope: "/labs/stoptinnitus/"
-          })
-          .then(function(registration) {
-            console.log(
-              "Service worker has been registered for scope:" +
-                registration.scope
-            );
-          })
-          .catch(function(error) {
-            console.log("Service worker registration failed, error:", error);
-          });
-      }
-    </script>
-  </head>
-  <body></body>
+
+<head>
+  <title>Installing the Cache-first network service worker</title>
+  <script type="text/javascript">
+    if (navigator.serviceWorker.controller) {
+      console.log("Service Worker is registered");
+    } else {
+      //Register the ServiceWorker
+      navigator.serviceWorker
+        .register("./sw.js", {
+          scope: "/labs/stoptinnitus/"
+        })
+        .then(function (registration) {
+          console.log(
+            "Service worker has been registered for scope:" +
+            registration.scope
+          );
+        })
+        .catch(function (error) {
+          console.log("Service worker registration failed, error:", error);
+        });
+    }
+  </script>
+</head>
+
+<body></body>
+
 </html>
