@@ -13,5 +13,8 @@
   "devDependencies": {
     "http-server": "^0.12.3",
     "workbox-cli": "^3.4.1"
+  },
+  "dependencies": {
+    "ecstatic": "^4.1.2"
   }
 }
