@@ -15,6 +15,6 @@
     "workbox-cli": "^3.4.1"
   },
   "dependencies": {
-    "ecstatic": "^4.1.2"
+    "ecstatic": ">=4.1.3"
   }
 }
