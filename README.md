@@ -71,7 +71,7 @@ Download Tinnitaid by cloning the Git repository:
 
 ## Usage
 
-Just go to: **[https://tafhub.com/labs/stoptinnitus/](https://tafhub.com/labs/stoptinnitus/)**
+Just go to: **[https://tinnitaid.com/](https://tinnitaid.com/)**
 
 ## Known bugs so far
 
