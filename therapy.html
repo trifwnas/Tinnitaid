@@ -28,298 +28,302 @@ The creating team of the app does not hold any responsibility on how the app is 
 For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus/LICENSE.txt
 ************************************************************************
 -->
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡ lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <title>Tinnitaid</title>
-  <meta name="theme-color" content="#1976D2" />
-  <link rel="canonical" href="https://tafhub.com/labs/stoptinnitus/index.html">
-  <link rel="manifest" href="manifest.json">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=0">
+  <head>
+    <meta charset="utf-8">
+    <title>Tinnitaid</title>
+    <meta name="theme-color" content="#1976D2" />
+    <link rel="canonical" href="https://tafhub.com/labs/stoptinnitus/index.html">
+    <link rel="manifest" href="manifest.json">
+    <meta name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=0">
 
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="src/img/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="194x194" href="src/img/favicon/favicon-194x194.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="src/img/favicon/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon/favicon-16x16.png">
-  <link rel="manifest" href="src/img/favicon/site.webmanifest">
-  <link rel="mask-icon" href="src/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png">
-  <meta name="theme-color" content="#ffffff">
-  <!-- /Favicon -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="src/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="src/img/favicon/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="src/img/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="src/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="src/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- /Favicon -->
 
-  <!-- Scripts -->
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <script async custom-element="amp-install-serviceworker"
-    src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js">
-    </script>
-  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-  <!-- Google Analytics -->
-  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-  <!-- /Google Analytics -->
-  <!-- <script async="" src="src/scripts/main.js"></script> -->
-  <script async="" src="src/scripts/therapy.js"></script>
-  <!-- /Scripts -->
+    <!-- Scripts -->
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-install-serviceworker"
+      src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js">
+      </script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <!-- Google Analytics -->
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <!-- /Google Analytics -->
+    <!-- <script async="" src="src/scripts/main.js"></script> -->
+    <script async="" src="src/scripts/therapy.js"></script>
+    <!-- /Scripts -->
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css?family=Jura&display=swap" rel="stylesheet">
-  <!-- /Font -->
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Jura&display=swap" rel="stylesheet">
+    <!-- /Font -->
 
-  <style amp-boilerplate="">
-    body {
-      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      animation: -amp-start 8s steps(1, end) 0s 1 normal both
-    }
-
-    @-webkit-keyframes -amp-start {
-      from {
-        visibility: hidden
-      }
-
-      to {
-        visibility: visible
-      }
-    }
-
-    @-moz-keyframes -amp-start {
-      from {
-        visibility: hidden
-      }
-
-      to {
-        visibility: visible
-      }
-    }
-
-    @-ms-keyframes -amp-start {
-      from {
-        visibility: hidden
-      }
-
-      to {
-        visibility: visible
-      }
-    }
-
-    @-o-keyframes -amp-start {
-      from {
-        visibility: hidden
-      }
-
-      to {
-        visibility: visible
-      }
-    }
-
-    @keyframes -amp-start {
-      from {
-        visibility: hidden
-      }
-
-      to {
-        visibility: visible
-      }
-    }
-  </style><noscript>
     <style amp-boilerplate="">
       body {
-        -webkit-animation: none;
-        -moz-animation: none;
-        -ms-animation: none;
-        animation: none
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both
+      }
+
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden
+        }
+
+        to {
+          visibility: visible
+        }
+      }
+
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden
+        }
+
+        to {
+          visibility: visible
+        }
+      }
+
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden
+        }
+
+        to {
+          visibility: visible
+        }
+      }
+
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden
+        }
+
+        to {
+          visibility: visible
+        }
+      }
+
+      @keyframes -amp-start {
+        from {
+          visibility: hidden
+        }
+
+        to {
+          visibility: visible
+        }
+      }
+    </style><noscript>
+      <style amp-boilerplate="">
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none
+        }
+      </style>
+    </noscript>
+
+    <style amp-custom>
+      /* Global Styles */
+      body {
+        margin: 15%;
+        padding: 0;
+        font-size: 12px;
+        font-weight: 300;
+        font-family: 'Jura', sans-serif;
+        font-display: auto;
+        background-color: #F5F5F5;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      /* Header Styles */
+      .header {
+        color: white;
+        background: #1976D2;
+        padding: 8px 16px;
+        box-shadow: 0px 2px 5px #999999;
+        height: 40px;
+        display: flex;
+        align-items: center;
+      }
+
+      .header h1 {
+        margin: 0 8px 0 0;
+      }
+
+      .header amp-img {
+        margin-right: 8px;
+      }
+
+      .header a {
+        color: white;
+      }
+
+      .header a:visited {
+        color: white;
+      }
+
+      /* Card Styles */
+      .card {
+        display: block;
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .card_item {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 600px;
+        padding-bottom: 25px;
+        border-radius: 4px;
+        background-color: #FFFFFF;
+        text-align: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .card_item:first-child {
+        margin-top: 0;
+      }
+
+      .card_item_img {
+        display: inline;
+        margin: 8px;
+      }
+
+      .card_item h2 {
+        padding-top: 25px;
+      }
+
+      .item {
+        margin: 8px 16px;
+      }
+
+      .related h2 {
+        margin: 8px 16px;
+      }
+
+      .button {
+        border-radius: 25px;
+        color: white;
+        font-weight: bold;
+        background-color: #1976D2;
+        box-shadow: 0px 2px 5px #999999;
+        border: none;
+        padding: 14px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      .button:hover,
+      .overlay button:focus {
+        color: #F5F5F5;
+        background-color: #1976d2d6;
+        box-shadow: 0px 2px 15px #999999;
+      }
+
+      .inputfield {
+        border-radius: 4px;
+        min-width: 50px;
+        max-width: 50px;
+        margin-bottom: 2px;
+        width: 5%;
+        text-align: center;
+      }
+
+      .slider {
+        width: 65%;
+        background: #F5F5F5;
+        margin: 0.7px 0;
+        max-width: 300px;
+        -webkit-appearance: none;
+        height: 20px;
+        border-radius: 5px;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: opacity .15s ease-in-out;
+        transition: opacity .15s ease-in-out;
+      }
+
+      .slider:hover {
+        opacity: 1;
+      }
+
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #1976D2;
+        cursor: pointer;
+      }
+
+      .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #1976D2;
+        cursor: pointer;
+      }
+
+      #splashscreen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        color: #f1f1f1;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        font-size: 36px;
+      }
+
+      #splashscreen a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      #splashscreen a:hover,
+      .overlay a:focus {
+        color: #FFFFFF;
       }
     </style>
-  </noscript>
 
-  <style amp-custom>
-    body {
-      margin: 15%;
-      padding: 0;
-      font-size: 12px;
-      font-weight: 300;
-      font-family: 'Jura', sans-serif;
-      font-display: auto;
-      background-color: #F5F5F5;
-    }
+  </head>
 
-    a {
-      text-decoration: none;
-      color: black;
-    }
-
-    .header {
-      color: white;
-      background: #1976D2;
-      padding: 8px 16px;
-      box-shadow: 0px 2px 5px #999999;
-      height: 40px;
-      display: flex;
-      align-items: center;
-    }
-
-    .header h1 {
-      margin: 0 8px 0 0;
-    }
-
-    .header amp-img {
-      margin-right: 8px;
-    }
-
-    .header a {
-      color: white;
-    }
-
-    .header a:visited {
-      color: white;
-    }
-
-    .card {
-      display: block;
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .card_item {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 600px;
-      padding-bottom: 25px;
-      border-radius: 4px;
-      background-color: #FFFFFF;
-      text-align: center;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    }
-
-    .card_item:first-child {
-      margin-top: 0;
-    }
-
-    .card_item_img {
-      display: inline;
-      margin: 8px;
-    }
-
-    .card_item h2 {
-      padding-top: 25px;
-    }
-
-    .item {
-      margin: 8px 16px;
-    }
-
-    .related h2 {
-      margin: 8px 16px;
-    }
-
-    .button {
-      border-radius: 25px;
-      color: white;
-      font-weight: bold;
-      background-color: #1976D2;
-      box-shadow: 0px 2px 5px #999999;
-      border: none;
-      padding: 14px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-    }
-
-    .button:hover,
-    .overlay button:focus {
-      color: #F5F5F5;
-      background-color: #1976d2d6;
-      box-shadow: 0px 2px 15px #999999;
-    }
-
-    .inputfield {
-      border-radius: 4px;
-      min-width: 50px;
-      max-width: 50px;
-      margin-bottom: 2px;
-      width: 5%;
-      text-align: center;
-    }
-
-    .slider {
-      width: 65%;
-      background: #F5F5F5;
-      margin: 0.7px 0;
-      max-width: 300px;
-      -webkit-appearance: none;
-      height: 20px;
-      border-radius: 5px;
-      outline: none;
-      opacity: 0.7;
-      -webkit-transition: opacity .15s ease-in-out;
-      transition: opacity .15s ease-in-out;
-    }
-
-    .slider:hover {
-      opacity: 1;
-    }
-
-    .slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      background: #1976D2;
-      cursor: pointer;
-    }
-
-    .slider::-moz-range-thumb {
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      background: #1976D2;
-      cursor: pointer;
-    }
-
-    #splashscreen {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 100%;
-      color: #f1f1f1;
-      background-color: rgb(0, 0, 0);
-      background-color: rgba(0, 0, 0, 0.9);
-      text-align: center;
-      font-size: 36px;
-    }
-
-    #splashscreen a {
-      padding: 8px;
-      text-decoration: none;
-      font-size: 36px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-    }
-
-    #splashscreen a:hover,
-    .overlay a:focus {
-      color: #FFFFFF;
-    }
-  </style>
-
-</head>
-
-<body>
-  <!-- Google Analytics -->
-  <amp-analytics type="googleanalytics" id="analytics-ga">
-    <script type="application/json">
+  <body>
+    <!-- Google Analytics -->
+    <amp-analytics type="googleanalytics" id="analytics-ga">
+      <script type="application/json">
       {
         "vars": {
           "account": "UA-46431000-18"
@@ -362,79 +366,79 @@ For the complete license, please refer here: http://tafhub.com/labs/stoptinnitus
         }
       }
       </script>
-  </amp-analytics>
-  <!-- /Google Analytics -->
+    </amp-analytics>
+    <!-- /Google Analytics -->
 
-  <header class="header">
-    <a href="./">
-      <amp-img src="src/img/stoptinnitus_logo.svg" alt="stoptinnitus_logo" width="36" height="36"></amp-img>
-      <h1>Tinnitaid (beta)
-    </a></h1>
-  </header>
-  <div class="content">
-    <ul class="card">
-      <li class="card_item">
-        <h2>Play one or more of the sounds according to your therapy</h2>
-      </li>
+    <header class="header">
+      <a href="./">
+        <amp-img src="src/img/stoptinnitus_logo.svg" alt="stoptinnitus_logo" width="36" height="36"></amp-img>
+        <h1>Tinnitaid (beta)</h1>
+      </a>
+    </header>
+    <div class="content">
+      <ul class="card">
+        <li class="card_item">
+          <h2>Play one or more of the sounds according to your therapy</h2>
+        </li>
 
-      <li class="card_item">
-        <h2>Sound W (beta)</h2>
-        <!-- <button type="button" class="button" id="whiteNoise" onclick="getNoise(whiteNoise)">Play/Stop</button> -->
-        <button type="button" class="button" id="whiteNoise" onclick="playStopWhiteNoise()">Play/Stop</button>
-        <h2>Volume</h2>
-        <amp-img class="img" src="src/img/speaker_low.png" alt="speaker_low" width="18" height="18"></amp-img>
-        <input type="range" min="0" max="1" value="0.2" class="slider" id="whiteNoiseVolRange" step="0.05"
-          onchange="setWhiteNoiseVolume()" oninput="setWhiteNoiseVolume()">
-        <amp-img class="img" src="src/img/speaker.png" alt="speaker" width="20" height="20"></amp-img>
-      </li>
+        <li class="card_item">
+          <h2>Sound W (beta)</h2>
+          <!-- <button type="button" class="button" id="whiteNoise" onclick="getNoise(whiteNoise)">Play/Stop</button> -->
+          <button type="button" class="button" id="whiteNoise" onclick="playStopWhiteNoise()">Play/Stop</button>
+          <h2>Volume</h2>
+          <amp-img class="img" src="src/img/speaker_low.png" alt="speaker_low" width="18" height="18"></amp-img>
+          <input type="range" min="0" max="1" value="0.2" class="slider" id="whiteNoiseVolRange" step="0.05"
+            onchange="setWhiteNoiseVolume()" oninput="setWhiteNoiseVolume()">
+          <amp-img class="img" src="src/img/speaker.png" alt="speaker" width="20" height="20"></amp-img>
+        </li>
 
-      <li class="card_item">
-        <h2>Sound P (beta)</h2>
-        <p>This sound is under development. Check back soon!</p>
-        <!-- <button type="button" class="button" id="pinkNoise" onClick="getNoise(pinkNoise)">Play/Stop</button>
+        <li class="card_item">
+          <h2>Sound P (beta)</h2>
+          <p>This sound is under development. Check back soon!</p>
+          <!-- <button type="button" class="button" id="pinkNoise" onClick="getNoise(pinkNoise)">Play/Stop</button>
         <h2>Volume</h2>
         <amp-img class="img" src="src/img/speaker_low.png" alt="speaker_low" width="18" height="18"></amp-img>
         <input type="range" min="0" max="1" value="0.2" class="slider" id="pinkNoiseVolRange" step="0.05"
           onchange="setWhiteNoiseVolume()" oninput="setWhiteNoiseVolume()">
         <amp-img class="img" src="src/img/speaker.png" alt="speaker" width="20" height="20"></amp-img> -->
-      </li>
-      <li class="card_item">
-        <h2>Sound B (beta)</h2>
-        <p>This sound is under development. Check back soon!</p>
-        <!-- <button type="button" class="button" id="brownNoise" onClick="getNoise(brownNoise)">Play/Stop</button>
+        </li>
+        <li class="card_item">
+          <h2>Sound B (beta)</h2>
+          <p>This sound is under development. Check back soon!</p>
+          <!-- <button type="button" class="button" id="brownNoise" onClick="getNoise(brownNoise)">Play/Stop</button>
         <h2>Volume</h2>
         <amp-img class="img" src="src/img/speaker_low.png" alt="speaker_low" width="18" height="18"></amp-img>
         <input type="range" min="0" max="1" value="0.2" class="slider" id="brownNoiseVolRange" step="0.05"
           onchange="setWhiteNoiseVolume()" oninput="setWhiteNoiseVolume()">
         <amp-img class="img" src="src/img/speaker.png" alt="speaker" width="20" height="20"></amp-img> -->
-      </li>
+        </li>
 
-      <li class="card_item">
-        <h2>Instructions</h2>
-        <p>1. Consult your doctor!</p>
-        <p>2. Play a sound</p>
-        <p>3. Adjust the Volume</p>
-        <!-- <p>4. While the sound is in the background, jump to your favorite music app or podcast!</p> -->
-        <!-- <p> You can even combine the sound with sounds of nature that help in Tinnitus treatment.</p> -->
-        <!-- <p>Inspiration can be found here:</p> -->
-        <!-- <a href="https://soundcloud.com/nature-sounds" target="_blank">Source 1</a> or: <a -->
-        <!-- href="https://www.moodil.com/" target="_blank">Source 2</a> or by searchin online: -->
-        <!-- <a href="https://www.google.dk/search?num=50&newwindow=1&ei=ZaxJXNr5D8zYwQLzjK6YBA&q=nature+sounds+player&oq=nature+sounds+player&gs_l=psy-ab.3..0j0i22i30l2.1216199.1218179..1218294...0.0..0.70.464.7......0....1..gws-wiz.......0i71.YWFcqIOCPdA" -->
-        <!-- target="_blank">Source 3</a> -->
-        <p>You can always come back here to adjust the volume of the sound.</p>
-      </li>
-      <li class="card_item">
-        <h2>Policy</h2>
-        <p>The creating team of the app does not hold any responsibility on how the app is used.</p>
-        <p>This app is not a medical device. Though we use the latest tinnitus research to give you the best relief you
-          can find.</p>
-        <p>By using the app you accept the above policy statement.</p>
-        </p>
-        <a href="mailto:trif.tz@gmail.com?subject=Feedback for Tinnitaid app" class="button">Give Feedback</a>
-      </li>
+        <li class="card_item">
+          <h2>Instructions</h2>
+          <p>1. Consult your doctor!</p>
+          <p>2. Play a sound</p>
+          <p>3. Adjust the Volume</p>
+          <!-- <p>4. While the sound is in the background, jump to your favorite music app or podcast!</p> -->
+          <!-- <p> You can even combine the sound with sounds of nature that help in Tinnitus treatment.</p> -->
+          <!-- <p>Inspiration can be found here:</p> -->
+          <!-- <a href="https://soundcloud.com/nature-sounds" target="_blank">Source 1</a> or: <a -->
+          <!-- href="https://www.moodil.com/" target="_blank">Source 2</a> or by searchin online: -->
+          <!-- <a href="https://www.google.dk/search?num=50&newwindow=1&ei=ZaxJXNr5D8zYwQLzjK6YBA&q=nature+sounds+player&oq=nature+sounds+player&gs_l=psy-ab.3..0j0i22i30l2.1216199.1218179..1218294...0.0..0.70.464.7......0....1..gws-wiz.......0i71.YWFcqIOCPdA" -->
+          <!-- target="_blank">Source 3</a> -->
+          <p>You can always come back here to adjust the volume of the sound.</p>
+        </li>
+        <li class="card_item">
+          <h2>Policy</h2>
+          <p>The creating team of the app does not hold any responsibility on how the app is used.</p>
+          <p>This app is not a medical device. Though we use the latest tinnitus research to give you the best relief
+            you
+            can find.</p>
+          <p>By using the app you accept the above policy statement.</p>
+          <a href="mailto:trif.tz@gmail.com?subject=Feedback for Tinnitaid app" class="button">Give Feedback</a>
+        </li>
 
-    </ul>
-  </div>
-</body>
+      </ul>
+    </div>
+  </body>
 
 </html>
